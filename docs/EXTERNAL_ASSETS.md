@@ -62,7 +62,7 @@ Alternatively install locally under the ignored path
 `third_party/surface_tools/msms-2.6.1/`. The ignored paths are conveniences,
 not a permission to upload the tools; do not force-add them to Git.
 
-## Checks and publication workflow
+## Verify preprocessing assets
 
 * `python scripts/verify_assets.py` checks all bundled benchmark/model/result
   assets. The old checksum index still records the exact ERNIE weight for
@@ -77,22 +77,7 @@ not a permission to upload the tools; do not force-add them to Git.
 * Machine-readable versions, hashes, links and release exclusions are in
   `external_assets.json`.
 
-The experiment checkout retains the locally installed files, ignored and no
-longer tracked in the current index; **its older Git commits/LFS objects still
-contain them**. Nothing was deleted or history-rewritten. Do not push that
-entire old repository as the clean publication repository.
-
-After committing changes, create a fresh publication snapshot:
-
-```
-python scripts/export_public_snapshot.py --output /new/path/paper_code2_public
-```
-
-The destination must not exist. The exporter copies tracked working-tree bytes
-(including actual LFS data rather than pointers), preserves internal links,
-excludes both external assets and all old `.git` history, then verifies assets.
-It writes `RELEASE_SNAPSHOT.json`, does not upload anything and does not
-declare other unresolved permissions cleared. Initialize a new Git repository
-inside that fresh snapshot when publishing; do not copy the experiment `.git`.
-Only the two HARIBOSS packages remain LFS-managed. Re-review other outstanding
-permissions before an actual public upload.
+Keep separately downloaded tools and pretrained weights local; do not force-add
+them to Git or assume their terms permit redistribution. Source code, official
+pretrained weights and RiboSurfBind-trained checkpoints are distinct assets.
+Third-party status is documented in [REDISTRIBUTION_AUDIT.md](REDISTRIBUTION_AUDIT.md).

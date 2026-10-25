@@ -1,178 +1,133 @@
-# Reproduction contract
+# Reproducibility
 
-## Git asset storage
+This guide records the inputs, computation and evaluation conventions needed
+to reproduce the released model. Installation commands are in
+[ENVIRONMENTS.md](ENVIRONMENTS.md); current smoke checks and expected results
+are in [REMOTE_CLONE_VALIDATION.md](REMOTE_CLONE_VALIDATION.md).
 
-Current benchmark data and published checkpoints are tracked in this repository;
-the old migration backup and newly generated runs remain ignored. Only the two
-large HARIBOSS data packages use Git LFS, as listed in `.gitattributes`. MSMS and
-the ERNIE pretrained checkpoint are local-only official-download assets; their
-versions/hashes are in `external_assets.json` and instructions in
-[EXTERNAL_ASSETS.md](EXTERNAL_ASSETS.md). Full local input/weight files,
-their hashes, model arithmetic and random-state handling are unchanged. Preserve
-both `.git/objects` and `.git/lfs/objects` when backing up an unpublished local
-repository. Those historical experiment objects must not be copied into a
-publication repository: use the fresh snapshot exporter to omit external
-assets and old Git history. A publication clone needs Git LFS and both real
-HARIBOSS objects before asset checks; a bare pointer is not a valid input package.
+## Frozen inputs and benchmark protocols
 
-The present server uses a verified official Git LFS binary in `.git/local-tools/`
-with repository-local filters, hooks and a `git lfs` alias. No system/global Git
-configuration or training environment is changed. This local setup is not cloned;
-on another machine install Git LFS normally and run `git lfs install --local`.
+Use the six checksummed `data/processed/*.pt` packages for exact paper-input
+reproduction. Each contains the actual experimental RNA records, coordinates,
+labels, frozen 768D ERNIE-RNA embeddings, post-softmax RNA-renormalized
+attention, and ligand-free molecular-surface inputs. Coordinates, residue order,
+surface ownership and feature tensors are not regenerated during training.
+No ligand coordinates or binding labels enter forward prediction inputs.
 
-The preprocessing/asset cleanup removes discarded nucleotide interaction-frame
-and legacy centroid calculations, unused imports, and the duplicate sequence-key
-implementation. It does not edit model files, training/evaluation arithmetic,
-random-state handling, auxiliary heads or the four compatibility layers.
-Surface-point local frames remain active and unchanged. Paired verification is
-recorded in `preprocessing_asset_cleanup_20261024.json`.
+Ordered splits are in `data/splits/`. Benchmark commands do not read raw PDBs
+or intermediate feature directories. Package tensors and dictionaries are
+loadable with `weights_only=True`; batching retains separate RNA attention
+matrices and local surface-point ownership indices.
 
-`asset_aliases.json` records eight lossless, relative internal links: two default
-sensitivity weight copies and six byte-identical training-log copies. Original
-paths, configuration files, checkpoint source hashes, and the 55 logical
-checkpoint configurations are preserved; 53 physical weight files remain.
-Preserve links in release archives and copies. Frozen manuscript figures remain
-in `results/figure_sources/`; disposable plot exports are no longer checksum
-dependencies. Existing historical audit reports describe their original layouts
-and are not rewritten as if those audits had run after this cleanup.
+- **Train60/Test18:** the ordered 60 training records use the original 54/6
+  split with split seed 42. Training seed and split seed are distinct. Test18
+  contains 18 RNAs and 610 nucleotides.
+- **HARIBOSS:** retain the four official structure-based split manifests. The
+  shared 353-record package contains 35,114 nucleotides and 4,958 positives;
+  do not split multichain records into separate samples.
+- **External protocol:** the 432-record HARIBOSS+TR60 manifest contains 345
+  training, 43 validation and 44 internal-test records. TL12 contains 515
+  nucleotides and 183 positives; JL10 contains 821 nucleotides and 264 positives.
+  The supplied alignment and nucleotide-like-ligand removal are already
+  reflected in these packages and must not be silently changed.
 
-The later idle-code cleanup removes the unused model config copy, unreachable
-canonical-reduction/sorting alternatives, and stale surface comments. The
-default automatic reduction and point order are unchanged. The legacy
-environment-variable rejection remains as a fail-fast guard, not an alternate
-algorithm. See `model_idle_cleanup_verification_20261024.json`: initialization,
-RNG and strict loading agree across 55 checkpoints; paired CPU single-RNA
-training steps agree in losses, gradients, clipping, Adam state/parameters and
-RNG for all three paper protocols; all 610 Test18 predictions are bitwise equal.
-Compatibility layers, auxiliary heads and ablation paths are retained.
-
-The 2026-10-24 workflow update adds input/evaluation guards and synchronizes
-current HARIBOSS result assets, without changing model or training arithmetic.
-See [WORKFLOW_FIXES_20261024.md](WORKFLOW_FIXES_20261024.md) for its 19-test
-validation scope, same-context Test18 comparison, and installation boundaries.
-
-## Scientific computation retained
-
-The final model consumes frozen 768D ERNIE-RNA embeddings, post-softmax
-RNA-renormalized attention, RNA residue coordinates, and ligand-free surface
-caches. No ligand coordinates or experimental labels enter prediction inputs.
-The canonical prepared records replace the inactive historical 136D tensor
-carrier. They and the precomputed ERNIE/surface inputs are now stored together
-in six `data/processed/*.pt` packages; no new feature definition is introduced.
-Coordinates, labels, sequence order, surface ownership and cache tensors are
-copied from the actual experimental inputs, not rebuilt. Ordered manifests are
-in `data/splits/`; raw structures and source annotations are inspection-only.
-The sibling `data-原始的形式` is preserved unchanged and is not loaded by any
-benchmark command. Packages use only ordinary tensor/dictionary/list/scalar
-objects, loadable with `weights_only=True`. Runtime carriers preserve separate
-RNA attention matrices and local point-owner indices during PyG batching.
-
-`data_package_verification_cpu.json` and `data_package_verification_cuda.json`
-record the paired migration checks. All 885 original record inputs and all
-ordered split lists were compared; original source-file checksums remain
-unchanged. CPU/CUDA checks compare initialization/RNG and 55 strict checkpoint
-loads, eight two-RNA molecular training scenarios (loss/gradients/clipping/one
-Adam update), full Test18/TL12/JL10 prediction arrays, and two test RNAs from
-each HARIBOSS split. The 11 fast tests include packed batching and the existing
-epoch-boundary resume check. CLI training was exercised with `--smoke-only`;
-no complete 100-epoch experiment was repeated for this data-layout migration.
-
-* Train60: the original ordered 60 records are split 54/6 with split seed 42.
-  Training seed and split seed are distinct. Test18 has 18 RNAs / 610 residues.
-* HARIBOSS: four official structure-based split manifests are retained. The
-  353 multichain graph records contain 35,114 residues / 4,958 positives.
-* External protocol: the official 432-record HARIBOSS+TR60 manifest is used
-  (345 training / 43 validation / 44 internal test). The extra 37 candidate
-  records are not silently included. TL12 contains 515 residues / 183 positives;
-  current JL10 contains 821 residues / 264 positives with the established GTP
-  removal/alignment processing preserved.
-
-Published HARIBOSS table seeds are 1,5,12,20,23; published TL12/JL10 table seeds
-are 15,20,24,28,46. The latter are the actual runs underlying the manuscript,
-not a newly substituted seed list. The seed1 external model retained for the
-7L0Z_G case is separate from those five table runs. Later ongoing experimental
-runs are not automatically incorporated into a frozen paper release.
+Published HARIBOSS table seeds are **1, 5, 12, 20, 23**; TL12/JL10 table seeds
+are **15, 20, 24, 28, 46**. The external seed1 model retained for the 7L0Z_G
+case study is separate from those five table runs. New runs do not automatically
+replace the frozen paper results.
 
 ## Model and optimizer compatibility
 
-The final model retains the old `state_dict` module names for strict loading.
-`lin4`, `lin1`, `lin2`, `bn1` are explicitly unused compatibility layers. Their
-construction order is retained because removing them changes initialization
-of later active layers. No original candidate graph branches are executed.
+The released model keeps the historical `state_dict` names for strict loading.
+`lin4`, `lin1`, `lin2` and `bn1` are unused compatibility layers, but their
+construction order is intentional: deleting them changes initialization of
+later active layers. Auxiliary heads and the order of parameter construction,
+dropout calls and residual arithmetic are also retained.
 
-The final-state-only cleanup removes unused GCNII variant/dimension-changing
-branches, unused intermediate-state concatenations, the identity surface
-projection and the unused classifier-embedding return option. GCNII keeps the
-same equal-width arithmetic and residual addition order. Fixed-mixture
-adjacency is computed only when the learned relation gate is absent; all
-single-graph and no-gate ablation computations remain unchanged. Dropout calls,
-initialization, parameter order, loss and optimizer settings are retained.
-
-`slim_verification_cpu.json` and `slim_verification_cuda.json` record paired
-before/after checks on the tested CPU and RTX 4090 / torch 2.2.0 environment:
-55 checkpoint architectures, 24 attention-branch settings, eight molecular
-training scenarios, RNG states, gradients, clipping, one Adam update including
-optimizer moments, and all 610 Test18 probabilities. The reports compare old
-and new **within each device**; they do not claim CPU and CUDA are bitwise equal
-to each other, or that all 100-epoch runs were repeated.
+Trial20 settings are in `configs/trial20.json`; the checkpoint's sibling
+`config.json` identifies its actual architecture and protocol. Do not remove
+compatibility parameters or substitute different initialization in an attempt
+to reproduce a saved seed.
 
 Train60 historically includes zero times the ATT auxiliary BCE in the loss;
-HARIBOSS/external omit that term. Zero gradients and missing gradients differ
-for Adam/weight decay. The shared engine preserves this protocol distinction.
-The actual surface auxiliary BCE coefficient is 0.05. This implementation does
-not change the objective to GRASSP's weighted BCE or its AdamW optimizer.
+HARIBOSS/external omit that term. Zero gradients and absent gradients can
+produce different Adam/weight-decay behavior. The shared engine preserves this
+distinction. The surface auxiliary BCE coefficient is 0.05. The optimizer is
+Adam, not AdamW, and the released objective is not a replacement weighted BCE.
 
 Single-branch ablations mask branch states after normalization while retaining
-the fusion head. The no-gate variant retains fixed equal-weight semantic/spatial
-messages. Neither is replaced with a different classifier or a no-graph model.
+the fusion head. The no-relation-gate ablation uses fixed equal-weight semantic
+and spatial messages. These are not alternative classifiers or no-graph models.
+Surface-point local frames and automatic KeOps reduction order remain active.
 
-## Checkpoints and metrics
+## Checkpoints, metrics and decision threshold
 
-`best_model.pt` in the published checkpoint folders is the original
-`lowest_validation_loss.pt`, without tensor conversion. Names and SHA-256
-hashes are recorded in `artifact_manifest.json`. Some original result/config
-files name validation MCC as a historical default; the raw loss-selected
-result block, not that top-level string, is the source of the paper numbers.
-The normalized runtime defaults explicitly select minimum mean per-RNA
-validation BCE. The validation loader has batch size 1.
-The `optimizer`, `threshold` and `checkpoint_selection` configuration fields
-document the fixed published protocol, not supported alternative switches.
+Published `best_model.pt` files are the original minimum-validation-loss
+weights, not converted tensors. Their SHA-256 values and source provenance are
+recorded in [artifact_manifest.json](artifact_manifest.json). The validation
+criterion is minimum mean per-RNA BCE, with validation batch size 1. Test data
+does not select the checkpoint.
 
-Test metrics pool all nucleotide labels/scores within a split. Across seeds,
-metrics are computed for each run and then averaged; concatenating all seeds'
-predictions is not equivalent. The decision is probability **strictly greater
-than** 0.5; AUC uses continuous scores. No test-threshold scan or test-based
-checkpoint choice is performed by the released engine. Raw metrics are stored
-at full precision and formatted once for manuscript tables.
+Historical raw result/config files can name validation MCC as an old default;
+the original loss-selected result block is the source of the released paper
+metrics. The `optimizer`, `threshold` and `checkpoint_selection` configuration
+fields document the fixed protocol, not supported alternative switches.
 
-Historical raw results and prediction arrays live in `results/raw`. They may
-contain obsolete source-server paths as provenance only; no runtime uses those
-paths. Historical scripts and the private `.archive` copy have been removed
-from this cleaned release; the unchanged sibling `paper_code` retains them.
+Metrics pool all nucleotide labels and scores within a test split. For a
+multi-seed result, calculate each run's metrics first, then average them;
+concatenating predictions across seeds is not equivalent. AUC uses continuous
+scores. Binary decisions use **`probability > 0.5`**, without a test-threshold
+scan. Store full precision and round only when formatting tables.
 
-## Determinism and resume
+`results/raw/` preserves available historical metrics, logs and predictions.
+Old server paths in these files are provenance only, not runtime dependencies.
+`results/published_metrics.csv` contains unrounded paper values.
 
-The engine restores Python/NumPy/PyTorch/CUDA RNG state, the shuffled training
-loader generator and Adam state from `resume.pt` at an epoch boundary. It keeps
-only the latest full resume state instead of all epoch weights. Old published
-weights-only files are not complete training-resume checkpoints.
+## Determinism and epoch-boundary resume
 
-Strict deterministic algorithms are enabled, CuDNN benchmarking and TF32 are
-disabled, and CUBLAS workspace configuration is `:4096:8`. Automatic KeOps
-reduction mode is retained. Exact equality across GPU types, drivers or library
-versions is not promised. The included equivalence audit records the environment
-and scope actually tested; it is not a claim that every 100-epoch experiment
-was retrained during code cleanup.
+Strict deterministic algorithms are enabled; CuDNN benchmarking and TF32 are
+disabled. CUBLAS workspace configuration is `:4096:8`. Keep the pinned software
+stack and current computation order. Exact equality across GPU types, drivers,
+library versions or CPU/CUDA execution is not guaranteed.
 
-## Environments
+At a completed epoch boundary, `resume.pt` restores model and Adam states,
+Python/NumPy/PyTorch/CUDA RNG states, and the shuffled training-loader generator.
+Resume with the same configuration, seed and output directory. Only the latest
+full resume state is kept. A published weights-only `best_model.pt` cannot
+restore an optimizer trajectory.
 
-`environment.yml` specifies the actual Python 3.8 / torch 2.2 training stack.
-Training/evaluation with existing caches does not require fairseq or PyMesh.
-ERNIE extraction uses a separate Python 3.9/fairseq environment. The original
-upstream environment file and source are retained with ERNIE-RNA; the observed
-local extraction stack is recorded in `PREPROCESSING.md`.
+The regression suite checks initialization and RNG golden hashes, strict
+checkpoint loading, ordered data splits, metrics, packed batching and
+epoch-boundary resume with a lightweight dropout model. GPU smoke and full
+Test18 checks are summarized in
+[REMOTE_CLONE_VALIDATION.md](REMOTE_CLONE_VALIDATION.md). These checks are not
+a rerun of all full 100-epoch, multi-seed experiments.
 
-Raw surface reconstruction invokes Reduce 3.23, MSMS 2.6.1, then a separate
-Python 3.7 / PyMesh 0.3 process. Do not attempt to install that legacy PyMesh
-wheel into the training environment. PyMOL rendering is optional and independent
-of model training. Ligands in figures are visualization references only.
+## Asset storage and verification
+
+Benchmark data, RiboSurfBind weights and retained results are versioned in this
+repository. The two large HARIBOSS packages use Git LFS; run `git lfs pull`
+before verification. Pointer files are not usable data packages.
+
+[asset_aliases.json](asset_aliases.json) describes eight relative, internal
+links sharing two default-sensitivity weight copies and six identical log
+copies. There are 55 checkpoint configurations backed by 53 physical weight
+files. Preserve these links when copying or archiving the repository.
+
+```bash
+python scripts/verify_assets.py
+python -m unittest discover -s tests -v
+```
+
+The verifier checks inputs/weights using
+[release_asset_checksums.csv](release_asset_checksums.csv), results using
+[result_asset_checksums.csv](result_asset_checksums.csv), and all shared-asset
+links. Disposable outputs in `results/new_runs/` and
+`results/reproduced_figures/` are not frozen assets.
+
+MSMS and the ERNIE pretrained weight are separately obtained preprocessing
+assets; see [EXTERNAL_ASSETS.md](EXTERNAL_ASSETS.md). They are not required for
+training/evaluation with frozen packages. New feature extraction is not
+promised to match the historical caches bitwise. Prepare new data separately,
+following [PREPROCESSING.md](PREPROCESSING.md), rather than overwriting the
+benchmark packages. Optional PyMOL display surfaces are not model inputs.

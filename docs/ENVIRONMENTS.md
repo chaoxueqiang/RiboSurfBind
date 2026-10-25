@@ -1,54 +1,33 @@
 # Installation and environment checks
 
-Use three isolated environments. Do not upgrade existing experiment environments
-in place. Training, frozen ERNIE extraction and the PyMesh helper deliberately
-use different Python/PyTorch versions.
+Use the main environment for training, evaluation and the frozen-input example.
+Only feature reconstruction needs the separate ERNIE and PyMesh environments.
+Do not upgrade an existing experiment environment in place: these roles use
+different Python/PyTorch versions.
 
 ## Validation status (2026-10-25)
 
-The initial CPU checks populated three empty `venv` environments with fresh packages,
-not cloned from experiment environments. Python 3.8.20/3.9.23/3.7.13, the
-OS/compiler, supplied tool binaries and weights already existed on this Linux
-server. System site packages were disabled. Downloaded/cached distribution
-archives are installation inputs, not copies of installed packages. This is a
-clean-package test, not a clean OS/container test.
+The pip/venv recipes were tested with freshly installed packages on an existing
+Linux server. Python interpreters, OS/compiler, GPU driver and CUDA toolkit
+were already available; this was not a new OS/container installation.
 
-A separate empty GPU `venv` was subsequently installed and tested with the
-original PyTorch 2.2.0+cu121 build on an RTX 4090. Third-party module paths were
-checked to exclude accidental imports from the old environment. GPU and CPU
-training are alternative installations of the same main role; users do not
-need both training environments.
+| Role | Tested stack | Runtime checks |
+| --- | --- | --- |
+| Main, GPU | Python 3.8.20, Torch 2.2.0+cu121, RTX 4090 | Imports, real inference/backpropagation, repeat/resume checks and Test18 comparison |
+| Main, optional CPU | Python 3.8.20, Torch 2.2.0+cpu | Imports, real inference and backward/Adam step |
+| ERNIE extraction | Python 3.9.23, Torch 1.10.0+cpu, fairseq 0.12.2 | Official-weight loading and real feature extraction |
+| PyMesh helper | Python 3.7.13, PyMesh 0.3 | MSMS mesh repair and surface feature generation |
 
-| Component | Fresh installation/runtime checks | Result |
-|---|---|---|
-| GPU training, Torch 2.2.0+cu121 | Strict versions/import provenance, pip check, 25 tests, fresh KeOps compilation, real inference/backpropagation, repeat/resume and Test18 comparison | PASS |
-| Training, Torch 2.2.0+cpu | Strict versions, pip check, 25 tests, real-RNA prediction, separate KeOps compilation cache and one backward/Adam step | PASS |
-| ERNIE, Torch 1.10.0+cpu | Strict versions/loader, pip check, pretrained-weight loading and real 22-nt feature extraction | PASS |
-| PyMesh 0.3, Python 3.7 | Versions/wheel/tool hashes, pip check, real MSMS mesh repair and surface features | PASS |
+GPU and CPU main environments are alternatives, not two required installations.
+The later [remote-clone validation](REMOTE_CLONE_VALIDATION.md) records the
+36-test suite, GPU example, Trial20 batch-size-16 training smoke and complete
+Test18 evaluation using code/data/weights fetched from GitHub.
 
-The initial CPU frozen-input example's maximum probability error was 1.49e-7; all residue
-identities and decisions matched. The training smoke used one small RNA and
-batch size 1, **only for installation testing**, not paper results. See its
-[initial CPU validation record](clean_install_attempt_20261024.json).
-
-The subsequent GPU checks used the unchanged Trial20 batch size 16 for two
-independently restarted seed1 one-update runs: both resulting model states were byte-identical to each
-other and to the old GPU environment. The complete Test18 prediction arrays
-also matched byte-for-byte, and AUC/Precision/Recall/MCC matched the saved paper
-metrics. A separate two-epoch real-RNA development smoke (batch size 1; 4/1/1
-train/validation/test RNAs) verified identical model, optimizer, RNG and loader
-states after interruption/resume. These are installation/reproduction checks,
-not full 100-epoch retraining. See the
-[GPU validation record](gpu_install_validation_20261025.json).
-
-The complete structure-to-features-to-prediction pipeline also ran with all
-three fresh environments: 22 nucleotides, 1,057 surface points, and identical
-binary decisions. Regenerated-input scores differed from the frozen reference
-by at most 0.00013432. This is a separate functional check, not a claim that
-rebuilt inputs satisfy the quick example's 1e-4 frozen-input tolerance.
-
-Separately, fresh Conda-prefix attempts were blocked by channel HTTP 000/timeouts.
-Successful GPU/CPU pip/venv checks do not validate the Conda solver route.
+Feature reconstruction is functional but is not promised to match frozen
+benchmark inputs bitwise. Full 100-epoch experiments were not repeated.
+Conda-prefix attempts were blocked by channel HTTP 000/timeouts; successful
+pip/venv checks do not validate the Conda solver route. The PyMesh runtime
+check used a hash-verified wheel; a new wheel download was not verified.
 
 ## Tested GPU installation: primary paper-training route
 

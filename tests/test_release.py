@@ -152,8 +152,8 @@ class ReleaseTests(unittest.TestCase):
                 self.assertAlmostEqual(np.mean([float(r[metric]) for r in values]),value,places=14)
     def test_epoch_boundary_resume(self):
         # Validate engine RNG/optimizer/loader restoration with a lightweight
-        # dropout model. Molecular model gradients are checked separately in
-        # docs/training_equivalence_report.json; this test does not need KeOps.
+        # dropout model without KeOps. The separate GPU-check scope is
+        # documented in docs/REPRODUCIBILITY.md.
         graphs=[]
         for i in range(4):
             graphs.append(Data(x=torch.tensor([[.2],[.8]]),y=torch.tensor([0.,1.]),node_feature_record_id=f'toy{i}'))

@@ -84,13 +84,10 @@ over the full token set, BOS/EOS are removed, each RNA-only head is renormalized
 heads are averaged and the final RNA rows are renormalized. Do not apply a
 second softmax to cached probabilities. Cache identity and row sums are checked.
 
-The new extraction entry point was exercised on a 30-nucleotide RNA. CPU
-extraction and the historical cached values are not bitwise identical: maximum
-absolute differences were approximately 9.76e-4 for embeddings and 8.94e-8 for
-attention. This observation does not establish the cause of the difference.
-For exact reproduction of the paper inputs, use the supplied, checksummed
-benchmark caches; the cleanup did not regenerate or replace them. See
-`feature_extraction_validation.json` for the measured comparison.
+Re-extraction is functional but is not promised to match historical cached
+features bitwise. For exact paper-input reproduction, use the supplied,
+checksummed benchmark packages. Keep newly extracted features in a separate
+dataset rather than replacing those frozen inputs.
 
 ## 3. Ligand-free surface features
 
@@ -107,7 +104,9 @@ python data_process/prepare_surface.py --manifest data/raw/custom/surface_manife
 For disconnected RNA components, use the retained `--msms-all-components` option
 where appropriate; `prepare_surface_fallback.py` retains the audited grouped-chain
 fallback for MSMS failures. It is not a replacement for normal joint processing
-of contacting chains. See the surface source/environment audit documents.
+of contacting chains. Geometry implementation and tool provenance are recorded
+in [GEOBIND_SOURCE_AUDIT.md](GEOBIND_SOURCE_AUDIT.md); installation commands are
+in [ENVIRONMENTS.md](ENVIRONMENTS.md).
 `validate_cache.py` can audit the final inputs and explicitly repair the known
 non-finite-curvature case in a new output cache. Published caches are already
 the finite runtime versions; no repair is performed while training.
