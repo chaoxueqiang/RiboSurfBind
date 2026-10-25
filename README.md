@@ -1,146 +1,137 @@
 # RiboSurfBind
 
-RNA–small molecule binding-site prediction with semantic–spatial residue
+RNA–small molecule binding-site prediction integrating nucleotide-relation
 learning and molecular-surface learning.
 
-The public interface consists of `train.py`, `evaluate.py`, and `predict.py`.
-The architecture is implemented in `models/`; benchmark protocols and paper
-experiment settings are explicit in `configs/`.
+RiboSurfBind requires an RNA sequence and structure-derived inputs; it is not
+a sequence-only predictor. The ligand is not a model input. Frozen benchmark
+features and RiboSurfBind-trained checkpoints are included in this repository,
+so the example and benchmark workflows do not require feature regeneration.
 
-## License and public-release status
+## 1. Download the repository and data
 
-Original RiboSurfBind code and associated documentation are licensed under
-the [MIT License](LICENSE), Copyright (c) 2026 Xueqiang Chao. This grant covers
-original contributions only: third-party code keeps its upstream terms, and
-datasets, model weights and result assets are not automatically relicensed
-under MIT by this code-license choice.
+Install [Git LFS](https://git-lfs.com/), then run:
 
-This reproducible working repository is **not yet a license-cleared public
-release** because separate third-party permissions remain unresolved.
-[Third-party notices](THIRD_PARTY_NOTICES.md) and the
-[redistribution audit](docs/REDISTRIBUTION_AUDIT.md) record outstanding
-code/data/weight permissions. MSMS and the ERNIE pretrained weight are now
-external-download assets, not bundled in the publication snapshot. Do not push
-the experiment checkout's old Git history, which still contains those files;
-use `scripts/export_public_snapshot.py` to create a fresh, history-free copy.
-GeoBind/dMaSIF implementation lineage also requires clarification.
-
-Run `python scripts/check_redistribution.py --check-history` before release.
-This advisory check does not change files or enforce Git pushes. Data/weight
-versioning below describes the local working repository, not blanket permission
-to redistribute every asset.
-
-## Installation
-
-Paper training uses GPU. For the freshly validated GPU pip/venv setup, follow
-the pinned recipe in [ENVIRONMENTS.md](docs/ENVIRONMENTS.md). The original
-Conda GPU manifest is also retained:
-
-```
-conda env create -f environment.yml
-conda activate ribosurfbind
-```
-
-The training environment uses Python 3.8 and PyTorch 2.2.0. KeOps requires a
-working C++ compiler and a writable user cache. CUDA 12.1 is specified for GPU
-use; CPU inference is supported but surface convolutions are slower. This
-environment specification reflects the experiment stack; fresh GPU pip/venv
-validation passed, while the separate Conda solver attempt was blocked by
-channel access. Validation scope, extraction/PyMesh recipes and checks are in
-[ENVIRONMENTS.md](docs/ENVIRONMENTS.md).
-
-Frozen benchmark features in `data/` and RiboSurfBind-trained weights in
-`checkpoints/` are versioned in the same repository. Two files use Git Large
-File Storage (Git LFS): `data/processed/hariboss.pt` and
-`data/processed/hariboss_tr60.pt`. Their paths and contents are unchanged.
-MSMS and `checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt` are separately obtained
-preprocessing assets; see [official download and verification instructions](docs/EXTERNAL_ASSETS.md).
-Neither is needed for packed training/evaluation or the real-RNA quick example.
-Install [Git LFS](https://git-lfs.com/) when obtaining
-the repository, then run the following from its root before tests/evaluation:
-
-```
+```bash
+git clone https://github.com/chaoxueqiang/RiboSurfBind.git
+cd RiboSurfBind
 git lfs install --local
 git lfs pull
+```
+
+Two data files use LFS: `data/processed/hariboss.pt` and
+`data/processed/hariboss_tr60.pt` (approximately 545 MB combined). A source ZIP
+may contain only their small pointer files. Use an LFS-enabled checkout and
+complete `git lfs pull` before running tests or HARIBOSS workflows.
+
+## 2. Install the main environment
+
+The tested paper-training stack is Linux x86-64, Python 3.8 and PyTorch
+2.2.0+cu121. GPU execution also requires a compatible NVIDIA driver, CUDA
+toolkit/NVRTC and a C++ compiler for KeOps.
+
+Follow the pinned [GPU pip/venv installation recipe](docs/ENVIRONMENTS.md#tested-gpu-installation-primary-paper-training-route).
+The same guide includes optional CPU and Conda routes, separate preprocessing
+environments, and the scope of installation validation. CPU inference is
+supported, but the paper training uses GPU; Conda resolution was not validated
+successfully on the test server.
+
+Only the main environment is needed for the frozen-input example, benchmark
+training and evaluation. The ERNIE and PyMesh environments are needed only
+when rebuilding inputs from structures and sequences. MSMS and the ERNIE-RNA
+pretrained weight are not bundled; obtain them from their official sources
+only if needed for preprocessing, following [EXTERNAL_ASSETS.md](docs/EXTERNAL_ASSETS.md).
+
+## 3. Check the installation and run one RNA
+
+In the activated main environment, from the repository root:
+
+```bash
 python scripts/verify_assets.py
 python -m unittest discover -s tests -v
-```
-
-A source ZIP can contain LFS pointer files instead of the actual large assets;
-use an LFS-enabled clone or ensure both real data files have been downloaded.
-The asset SHA-256 index is in `docs/release_asset_checksums.csv`; model
-provenance is in `docs/artifact_manifest.json`. New training/plot outputs and
-the old `data-原始的形式/` migration backup are not versioned.
-Result/figure hashes are in `docs/result_asset_checksums.csv`;
-`python scripts/verify_assets.py` checks both input/weight and result manifests.
-Byte-identical default-sensitivity weights and training logs share canonical
-files through relative, repository-internal symbolic links documented in
-`docs/asset_aliases.json`. There are still 55 checkpoint configurations, backed
-by 53 physical RiboSurfBind weight files. Preserve links when copying or creating
-release archives (for example, `cp -a` or ordinary `tar` without dereferencing).
-All links remain inside the repository.
-
-## Quick example: one real RNA
-
-In the GPU training environment:
-
-```
 python examples/2JUK_A/run_example.py --device cuda:0
 ```
 
-For CPU-only quick inference, omit `--device cuda:0`. Paper training uses GPU;
-the CPU default is a convenience for testing installation, not a training change.
+The example predicts all 22 nucleotides of PDB **2JUK, chain A**, using the
+included label-free inputs and Train60 seed1 checkpoint. It checks residue
+identities, binary decisions and reference probabilities, then writes
+`2JUK_A.csv` and `verification.json` under `results/new_runs/example_2JUK_A/`.
+Successful verification reports `PASS`. Omit `--device cuda:0` for CPU inference.
+See the [example guide](examples/2JUK_A/README.md) for input files, expected
+output and optional feature-reconstruction commands.
 
-This predicts the 22 nucleotides of PDB **2JUK, chain A**, using supplied
-label-free frozen inputs and the published Train60 seed1 checkpoint. It checks
-residue identities, binary predictions and reference probabilities, then writes
-`2JUK_A.csv` and a `PASS` report under `results/new_runs/example_2JUK_A/`.
-No ERNIE extraction or PyMesh installation is needed for this quick path.
-See [the example guide](examples/2JUK_A/README.md) for the structure, FASTA,
-expected output and optional feature-reconstruction commands.
+To check one GPU training update without starting a full experiment:
 
-## Data organization
-
-`data/processed/` contains six self-contained tensor packages: `train60.pt`,
-`test18.pt`, `hariboss.pt`, `hariboss_tr60.pt`, `tl12.pt`, and `jl10.pt`.
-Each RNA includes residue identities/coordinates, frozen ERNIE embeddings and
-attention, labels when available, and all molecular-surface inputs. Benchmark
-loading does not read intermediate feature directories or original PDB files.
-`data/splits/` preserves the original ordered lists; HARIBOSS Set1–Set4 share
-one 353-RNA package. `data/raw/` retains structures, annotations and provenance
-for inspection/reprocessing, not for training. See [data/README.md](data/README.md)
-for the schema. `--data-root` denotes the directory containing `processed/`
-and `splits/`, not a single dataset subdirectory.
-
-The supplied benchmark packages retain the exact cached features used in the
-paper; they are not regenerated during installation or training.
-
-## Quick evaluation
-
+```bash
+python train.py --protocol test18 --seed 1 --device cuda:0 --smoke-only \
+  --output results/new_runs/training_smoke
 ```
+
+Use a new output directory for each check. See the
+[remote-clone validation record](docs/REMOTE_CLONE_VALIDATION.md) for the tested
+snapshot, asset checks, 36-test suite and GPU results.
+
+## Data and checkpoints
+
+`data/processed/` contains six self-contained packages: `train60.pt`,
+`test18.pt`, `hariboss.pt`, `hariboss_tr60.pt`, `tl12.pt` and `jl10.pt`.
+They include nucleotide identities/coordinates, frozen ERNIE embeddings and
+attention, labels, and molecular-surface inputs. Benchmark loading does not
+read original PDB files or intermediate feature directories.
+
+`data/splits/` preserves ordered protocol splits. `data/raw/` contains source
+structures, annotations and provenance for inspection or reprocessing. See
+[data/README.md](data/README.md) for the package schema. `--data-root` means the
+directory containing both `processed/` and `splits/`.
+
+| Protocol | Training / validation | Evaluation | Checkpoint directory |
+| --- | --- | --- | --- |
+| `test18` | Train60: 54 / 6 RNAs | Test18: 18 RNAs | `checkpoints/train60/seed1/` |
+| `hariboss` | Official Set1–Set4 splits | Corresponding held-out set | `checkpoints/hariboss/set<1-4>/seed<seed>/` |
+| `external` | HARIBOSS+TR60: 345 / 43 RNAs; 44 internal-test RNAs retained separately | TL12 and JL10 | `checkpoints/hariboss_tr60/seed<seed>/` |
+
+Each published checkpoint has `best_model.pt` and a sibling `config.json`.
+The selected checkpoint minimizes validation loss; the test set is not used
+by the checkpoint selector. The saved HARIBOSS seeds are **1, 5, 12, 20, 23**;
+the external benchmark seeds are **15, 20, 24, 28, 46**. Exact settings are in
+the checkpoint configurations and [configs/protocols.json](configs/protocols.json).
+
+Input/weight and result SHA-256 indexes are in
+[release_asset_checksums.csv](docs/release_asset_checksums.csv) and
+[result_asset_checksums.csv](docs/result_asset_checksums.csv).
+[artifact_manifest.json](docs/artifact_manifest.json) records model provenance.
+There are 55 checkpoint configurations backed by 53 physical weight files;
+duplicate assets use relative, repository-internal symbolic links listed in
+[asset_aliases.json](docs/asset_aliases.json). Preserve symbolic links when
+copying or archiving the repository.
+
+## Evaluate a checkpoint
+
+```bash
 python evaluate.py --protocol test18 \
   --checkpoint checkpoints/train60/seed1/best_model.pt \
-  --device cpu --output results/new_runs/test18_evaluation
+  --device cuda:0 --output results/new_runs/test18_evaluation
 
 python evaluate.py --protocol hariboss --set 2 \
   --checkpoint checkpoints/hariboss/set2/seed1/best_model.pt \
   --device cuda:0 --output results/new_runs/hariboss_set2_evaluation
 
-python evaluate.py --protocol external --split jl10 \
+python evaluate.py --protocol external --split tl12 \
   --checkpoint checkpoints/hariboss_tr60/seed15/best_model.pt \
-  --device cuda:0 --output results/new_runs/jl10_seed15_evaluation
+  --device cuda:0 --output results/new_runs/tl12_seed15_evaluation
 ```
 
-Evaluation exports pooled nucleotide-level metrics and complete prediction
-arrays. Predictions use `probability > 0.5`, not a test-optimized threshold.
-`best_model.pt` is the original minimum-validation-loss checkpoint.
-The evaluator checks the checkpoint protocol and HARIBOSS set before loading
-data. If --set is omitted it is taken from the checkpoint metadata; an explicit
-incompatible --set or --protocol is rejected, including configuration overrides.
+For JL10, change `--split tl12` to `--split jl10` and choose a different output
+directory. `--device cpu` is available for CPU evaluation.
 
-## Training
+Evaluation exports pooled nucleotide-level metrics and prediction arrays.
+Decisions use **`probability > 0.5`**, not a threshold optimized on the test
+set. The evaluator checks checkpoint protocol and HARIBOSS set compatibility;
+if `--set` is omitted, it is read from the checkpoint configuration.
 
-```
+## Train and resume
+
+```bash
 python train.py --protocol test18 --seed 1 --device cuda:0 \
   --output results/new_runs/test18_seed1
 
@@ -151,66 +142,65 @@ python train.py --protocol external --seed 15 --device cuda:0 \
   --output results/new_runs/external_seed15
 ```
 
-The external protocol trains on the official HARIBOSS+TR60 345/43/44 split,
-then evaluates the same loss-selected model on current TL12 and JL10 inputs.
-HARIBOSS preserves each official Set1–Set4 split. Train60 uses its original
-54/6 train/validation split; Test18 does not influence checkpoint selection.
+The default [Trial20 configuration](configs/trial20.json) uses 100 epochs,
+batch size 16, Adam, linear warmup followed by cosine decay, and strict
+determinism controls. Each run saves the validation-selected `best_model.pt`
+and latest full `resume.pt` state.
 
-`--smoke-only` performs one training update without starting a formal run.
-Use a separate output directory for smoke tests. The normal schedule is 100
-epochs, batch size 16, Adam, linear warmup followed by cosine decay. See
-`configs/trial20.json` for all active parameters.
+To resume at a completed epoch boundary, keep the same configuration, seed,
+output directory and other arguments, and add:
 
-To resume at a completed epoch boundary, keep the original output directory,
-configuration and command arguments, and add:
-
-```
+```bash
 --resume results/new_runs/test18_seed1/resume.pt
 ```
 
-Old published weights alone cannot resume an optimizer trajectory. New runs
-save the latest full `resume.pt` plus the validation-selected `best_model.pt`;
-they do not generate 100 redundant weights per run.
+Published `best_model.pt` weights alone do not contain the optimizer and RNG
+states needed to resume a training trajectory. Compatibility layers and model
+initialization order are intentional; see [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md)
+before changing model construction. Exact agreement across different hardware
+or library versions is not guaranteed.
 
-Historical checkpoint/RNG compatibility layers are deliberately retained; see
-[REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) before altering model construction.
+## Paper experiments and figures
 
-## Reproduce paper experiments
+The experiment launcher prints the job list without running it:
 
-Commands print the complete job list by default. Add `--execute` to run it.
-
-```
+```bash
 python scripts/run_experiments.py --suite benchmarks --device cuda:0
 python scripts/run_experiments.py --suite ablations --device cuda:0
 python scripts/run_experiments.py --suite sensitivity --device cuda:0
 ```
 
-The frozen paper HARIBOSS seeds are 1,5,12,20,23. The exact external table seeds are
-15,20,24,28,46. Existing runs are retained, not silently replaced by new
-training results. Optional `--seeds` changes the requested benchmark jobs;
-it does not rewrite the published tables.
+Add `--execute` to start the requested jobs. This can launch full training;
+it is not an installation check. Five ablations and three one-factor
+sensitivity grids are defined in [ablations.json](configs/ablations.json)
+and [sensitivity.json](configs/sensitivity.json).
 
-Five controlled ablations are configured in `configs/ablations.json`; three
-one-factor sensitivity grids are in `configs/sensitivity.json`.
+Unrounded paper metrics are stored in `results/published_metrics.csv`;
+`results/raw/` contains retained per-run metrics/logs and available predictions.
+Regenerate numerical plots and the three-decimal summary table with:
 
-```
-python train.py --protocol test18 --ablation no_relation_gate --seed 1 \
-  --device cuda:0 --output results/new_runs/no_relation_gate
-python train.py --protocol test18 --attention-depth 6 --seed 1 \
-  --device cuda:0 --output results/new_runs/depth6
+```bash
+python scripts/reproduce_figures.py
 ```
 
-## Predict a new RNA
+Baseline values are retained literature comparison results, not newly rerun
+baseline models. Frozen figure assets are in `results/figure_sources/`;
+generated figures under `results/reproduced_figures/` are not frozen inputs.
 
-Prepare records, frozen ERNIE features and ligand-free surface features using
-`data_process/`. Detailed commands and separate preprocessing environments
-are documented in [PREPROCESSING.md](docs/PREPROCESSING.md).
-The record preparer safely appends batches, supports ordered multichain entities,
-and accepts identity-matched labels or explicit ligand-contact label generation.
-New labelled datasets can use the separate --protocol custom path; see the same
-guide for explicit train/validation/test manifests. Published inputs are untouched.
+Four case studies (1NEM_A, 1Q8N_A, 1AKX and 7L0Z_G) are configured in
+[cases.json](configs/cases.json), with retained predictions and molecular
+scenes. In an optional PyMOL environment with NumPy and Matplotlib, run
+`python scripts/render_cases.py`. The rendering preserves the original
+cameras, TP/FP/FN colors and ligand display. PyMOL display surfaces are not
+the MSMS/PyMesh surfaces used as model inputs.
 
-```
+## Prepare and predict a new RNA
+
+Follow [PREPROCESSING.md](docs/PREPROCESSING.md) to prepare nucleotide records,
+frozen ERNIE features and ligand-free molecular-surface features in their
+respective environments. Once those inputs have been prepared:
+
+```bash
 python data_process/pack_dataset.py --dataset-root data/raw/custom \
   --name custom --output data/processed/custom.pt
 
@@ -219,59 +209,39 @@ python predict.py --data data/processed/custom.pt \
   --device cuda:0 --output results/new_runs/custom_predictions
 ```
 
-RNA sequences **and 3D structure-derived inputs** are required. This is not a
-sequence-only predictor. The ligand is not required as a model input. Output
-CSV gives nucleotide identity, sequence position, structural residue identifier,
-probability and binary label. Unlabelled records are accepted.
-For debugging preprocessing only, the explicit `--records`, `--embedding-dir`,
-`--attention-dir`, `--surface-dir` interface remains available; benchmark jobs
-and the normal packaged prediction path do not need it.
+Unlabelled inputs are supported. Prediction CSVs include nucleotide identity,
+sequence position, structural residue identifier, probability and binary
+label. The preprocessing guide also covers ordered multichain inputs and
+training on custom labelled splits.
 
-## Results and figures
+Use the supplied frozen packages for exact paper-input reproduction. Newly
+extracted ERNIE or surface features are not promised to match historical
+caches bitwise. Neither the remote-clone checks nor the code-organization
+checks repeated all full 100-epoch, multi-seed experiments.
 
-`results/published_metrics.csv` stores unrounded paper metrics.
-`results/raw/` retains original per-run metrics/logs and available predictions.
-`results/figure_sources/` contains manuscript figure assets and plotting data.
+## Citation and questions
 
-```
-python scripts/reproduce_figures.py
-```
+Use [CITATION.cff](CITATION.cff) to cite this software repository. It currently
+uses the confirmed software maintainer's name, Xueqiang Chao; it is not the
+manuscript author list. The manuscript citation will be added when its author
+list and bibliographic information are confirmed. No paper DOI or publication
+details are asserted here.
 
-This regenerates HARIBOSS AUC/MCC comparisons, sensitivity curves and a
-three-decimal summary table from numerical files. Baseline numbers are the
-retained literature comparison values, not newly rerun baseline models.
-Frozen manuscript figures are retained only in `results/figure_sources/`.
-`results/reproduced_figures/` is disposable output, excluded from the frozen
-asset checksums; regenerating plots does not invalidate release verification.
+For reproducibility questions or bug reports, open a
+[GitHub issue](https://github.com/chaoxueqiang/RiboSurfBind/issues) and include
+the command, environment, checkpoint and error message, without credentials
+or private data.
 
-Four cases are configured in `configs/cases.json`: 1NEM_A, 1Q8N_A, 1AKX and
-7L0Z_G. Their original audited predictions and native molecular scenes are
-included. In an optional PyMOL environment with NumPy and Matplotlib:
+## License and third-party assets
 
-```
-python scripts/render_cases.py
-```
+Original RiboSurfBind code and associated documentation are licensed under
+the [MIT License](LICENSE), Copyright (c) 2026 Xueqiang Chao. Third-party code
+retains its own terms; this code-license choice does not automatically
+relicense datasets, weights or result assets.
 
-The script retains original cameras, TP/FP/FN residue colors and yellow ligand
-display. PyMOL display surfaces are not the model's MSMS/PyMesh input surface.
-
-## Validation and scope
-
-The regression suite checks model initialization/RNG, strict checkpoint loading,
-benchmark splits, metrics, batching and epoch-boundary training resume. Asset
-checks cover frozen inputs, weights and results. Detailed equivalence records
-and their CPU/CUDA scope are linked from
-[REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
-
-Use the frozen benchmark inputs for exact paper-input reproduction. Fresh
-ERNIE extraction is not promised to match historical caches bitwise, and exact
-agreement across hardware/library versions is not guaranteed. Full 100-epoch
-experiments were not repeated during code organization. See
-[PREPROCESSING.md](docs/PREPROCESSING.md) and
-[ENVIRONMENTS.md](docs/ENVIRONMENTS.md) for the corresponding boundaries.
-
-## Attribution and release checklist
-
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Before public upload, the
-authors must finalize the project license, citation metadata and redistribution
-permissions for bundled third-party tools, data and pretrained weights.
+**Third-party redistribution clearance is incomplete.** The
+[third-party notices](THIRD_PARTY_NOTICES.md) and
+[redistribution audit](docs/REDISTRIBUTION_AUDIT.md) describe unresolved
+permissions, including GeoBind/dMaSIF lineage and source data/weights.
+Technical validation is not a license clearance. MSMS and the ERNIE-RNA
+pretrained weight are external-download assets, not included in this checkout.

@@ -1,8 +1,16 @@
 cff-version: 1.2.0
-message: "Please cite the RiboSurfBind manuscript. Bibliographic metadata will be finalized at publication."
+message: >-
+  If you use this software, please cite this repository. This record describes
+  the software using the confirmed maintainer's name, not the manuscript
+  author list. The manuscript citation will be added when confirmed.
+type: software
 title: RiboSurfBind
 authors:
-  - name: RiboSurfBind authors
-type: software
-version: 0.1.0
-abstract: "RNA-small molecule binding site prediction with semantic-spatial residue learning and molecular-surface learning."
+  - family-names: Chao
+    given-names: Xueqiang
+repository-code: "https://github.com/chaoxueqiang/RiboSurfBind"
+url: "https://github.com/chaoxueqiang/RiboSurfBind"
+license: MIT
+abstract: >-
+  RNA-small molecule binding-site prediction integrating nucleotide-relation
+  learning and molecular-surface learning.
