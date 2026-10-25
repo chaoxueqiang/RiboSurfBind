@@ -1,0 +1,289 @@
+{
+  "version": "1.0",
+  "figure": {
+    "title": "RiboSurfBind: verified GCNII path",
+    "target": "paper",
+    "direction": "LR"
+  },
+  "metadata": {
+    "source_files": [
+      "/home2/2025/25cxq/my_mvrbind/attention_gcn.py:318"
+    ],
+    "unresolved": [],
+    "semantic_review": "alpha=0.5; variant=False; residual=True; four unshared layers",
+    "publication_view": {
+      "requested": "One H0 bus connected to all external sums",
+      "equivalence": "((1-alpha)M+alpha H0)T+D = ((1-alpha)MT+D)+alpha H0 T",
+      "shared_transform": "T_l = theta_l W_l + (1-theta_l)I, identical parameters in both terms",
+      "block_contents": "(1-alpha) M_l T_l + D_(l-1)",
+      "top_route": "alpha H0 T_l",
+      "after_sum": "ReLU",
+      "illustrations": "Existing graph glyphs retained; layers 3–4 compressed"
+    }
+  },
+  "nodes": [
+    {
+      "id": "h0",
+      "label": "Initial state H0",
+      "role": "input"
+    },
+    {
+      "id": "d1",
+      "label": "Dropout 1"
+    },
+    {
+      "id": "m1",
+      "label": "Relation-gated messages 1"
+    },
+    {
+      "id": "s1",
+      "label": "Initial-state mixing 1"
+    },
+    {
+      "id": "u1",
+      "label": "GCNII transform 1"
+    },
+    {
+      "id": "sum1",
+      "label": "Layer-input residual sum 1"
+    },
+    {
+      "id": "h1",
+      "label": "ReLU 1"
+    },
+    {
+      "id": "d2",
+      "label": "Dropout 2"
+    },
+    {
+      "id": "m2",
+      "label": "Relation-gated messages 2"
+    },
+    {
+      "id": "s2",
+      "label": "Initial-state mixing 2"
+    },
+    {
+      "id": "u2",
+      "label": "GCNII transform 2"
+    },
+    {
+      "id": "sum2",
+      "label": "Layer-input residual sum 2"
+    },
+    {
+      "id": "h2",
+      "label": "ReLU 2"
+    },
+    {
+      "id": "d3",
+      "label": "Dropout 3"
+    },
+    {
+      "id": "m3",
+      "label": "Relation-gated messages 3"
+    },
+    {
+      "id": "s3",
+      "label": "Initial-state mixing 3"
+    },
+    {
+      "id": "u3",
+      "label": "GCNII transform 3"
+    },
+    {
+      "id": "sum3",
+      "label": "Layer-input residual sum 3"
+    },
+    {
+      "id": "h3",
+      "label": "ReLU 3"
+    },
+    {
+      "id": "d4",
+      "label": "Dropout 4"
+    },
+    {
+      "id": "m4",
+      "label": "Relation-gated messages 4"
+    },
+    {
+      "id": "s4",
+      "label": "Initial-state mixing 4"
+    },
+    {
+      "id": "u4",
+      "label": "GCNII transform 4"
+    },
+    {
+      "id": "sum4",
+      "label": "Layer-input residual sum 4"
+    },
+    {
+      "id": "h4",
+      "label": "ReLU 4"
+    }
+  ],
+  "edges": [
+    {
+      "from": "h0",
+      "to": "d1",
+      "type": "main"
+    },
+    {
+      "from": "d1",
+      "to": "m1",
+      "type": "main"
+    },
+    {
+      "from": "m1",
+      "to": "s1",
+      "type": "main"
+    },
+    {
+      "from": "h0",
+      "to": "s1",
+      "type": "residual"
+    },
+    {
+      "from": "s1",
+      "to": "u1",
+      "type": "main"
+    },
+    {
+      "from": "u1",
+      "to": "sum1",
+      "type": "main"
+    },
+    {
+      "from": "d1",
+      "to": "sum1",
+      "type": "residual"
+    },
+    {
+      "from": "sum1",
+      "to": "h1",
+      "type": "main"
+    },
+    {
+      "from": "h1",
+      "to": "d2",
+      "type": "main"
+    },
+    {
+      "from": "d2",
+      "to": "m2",
+      "type": "main"
+    },
+    {
+      "from": "m2",
+      "to": "s2",
+      "type": "main"
+    },
+    {
+      "from": "h0",
+      "to": "s2",
+      "type": "residual"
+    },
+    {
+      "from": "s2",
+      "to": "u2",
+      "type": "main"
+    },
+    {
+      "from": "u2",
+      "to": "sum2",
+      "type": "main"
+    },
+    {
+      "from": "d2",
+      "to": "sum2",
+      "type": "residual"
+    },
+    {
+      "from": "sum2",
+      "to": "h2",
+      "type": "main"
+    },
+    {
+      "from": "h2",
+      "to": "d3",
+      "type": "main"
+    },
+    {
+      "from": "d3",
+      "to": "m3",
+      "type": "main"
+    },
+    {
+      "from": "m3",
+      "to": "s3",
+      "type": "main"
+    },
+    {
+      "from": "h0",
+      "to": "s3",
+      "type": "residual"
+    },
+    {
+      "from": "s3",
+      "to": "u3",
+      "type": "main"
+    },
+    {
+      "from": "u3",
+      "to": "sum3",
+      "type": "main"
+    },
+    {
+      "from": "d3",
+      "to": "sum3",
+      "type": "residual"
+    },
+    {
+      "from": "sum3",
+      "to": "h3",
+      "type": "main"
+    },
+    {
+      "from": "h3",
+      "to": "d4",
+      "type": "main"
+    },
+    {
+      "from": "d4",
+      "to": "m4",
+      "type": "main"
+    },
+    {
+      "from": "m4",
+      "to": "s4",
+      "type": "main"
+    },
+    {
+      "from": "h0",
+      "to": "s4",
+      "type": "residual"
+    },
+    {
+      "from": "s4",
+      "to": "u4",
+      "type": "main"
+    },
+    {
+      "from": "u4",
+      "to": "sum4",
+      "type": "main"
+    },
+    {
+      "from": "d4",
+      "to": "sum4",
+      "type": "residual"
+    },
+    {
+      "from": "sum4",
+      "to": "h4",
+      "type": "main"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.keops/
+results/new_runs/
+results/reproduced_*/
+data-原始的形式/
+release_assets.tar.gz
+# Local-only preprocessing installations; public snapshots provide official links.
+third_party/surface_tools/msms-2.6.1/
+checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt

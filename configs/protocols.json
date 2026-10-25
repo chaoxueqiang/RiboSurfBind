@@ -1,0 +1,9 @@
+{
+  "test18": {"group":"train60_test18", "counts":{"train":54,"validation":6,"test18":18},"test_batch_size":18,"paper_seeds":[1]},
+  "hariboss": {"group":"hariboss", "counts":{
+    "set1":{"train":262,"validation":46,"test":45},
+    "set2":{"train":284,"validation":31,"test":38},
+    "set3":{"train":261,"validation":41,"test":51},
+    "set4":{"train":277,"validation":39,"test":37}},"test_batch_size":16,"paper_seeds":[1,5,12,20,23]},
+  "external": {"group":"hariboss_tr60", "counts":{"train":345,"validation":43,"internal_test":44},"test_batch_size":16,"paper_seeds":[15,20,24,28,46]}
+}

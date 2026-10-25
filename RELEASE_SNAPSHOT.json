@@ -1,0 +1,18 @@
+{
+  "schema": "ribosurfbind_public_snapshot_v1",
+  "source_commit": "9782f9d13692012a7d3a5a54a55148f418f7c54f",
+  "copied_files": 1866,
+  "excluded_paths": [
+    "third_party/surface_tools/msms-2.6.1/",
+    "checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt"
+  ],
+  "git_history_copied": false,
+  "release_ready": false,
+  "remaining_review_items": [
+    "dmasif_lineage",
+    "graph_model_ancestry",
+    "mvrbind_grassp_data",
+    "cobra_annotations_splits",
+    "original_outputs"
+  ]
+}

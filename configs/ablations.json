@@ -1,0 +1,7 @@
+{
+  "att_only": {"ablate_branch":"surface"},
+  "surface_only": {"ablate_branch":"attention"},
+  "semantic_only": {"graph_mode":"topk","relation_gate":false},
+  "spatial_only": {"relation_gate":false,"spatial_weight":1.0},
+  "no_relation_gate": {"relation_gate":false,"spatial_weight":0.5}
+}

@@ -1,0 +1,324 @@
+{
+  "schema": "ribosurfbind_third_party_review_v1",
+  "reviewed_on": "2026-10-25",
+  "scope": "Manual artifact/source-lineage audit; not legal certification or exhaustive dependency SBOM.",
+  "release_ready": false,
+  "license_documents": [
+    {
+      "path": "LICENSE",
+      "retained_sha256": "17fba7abf80350e6085d0dd7961beec15bfbadb10d6c4331c054d70e7306e2f3",
+      "note": "Project-original-code MIT text and Copyright (c) 2026 Xueqiang Chao approved by the user on 2026-10-25; not a blanket license for third-party code or assets."
+    },
+    {
+      "path": "licenses/GeoBind-MIT.txt",
+      "upstream_url": "https://raw.githubusercontent.com/zpliulab/GeoBind/f8e336b8239fecf655d5a306ae56f887b1cf146e/LICENSE",
+      "upstream_sha256": "ead34295a42713463d1e59aa98a7da2f41acbc024c5b5c0237959dda298d5f35",
+      "retained_sha256": "ead34295a42713463d1e59aa98a7da2f41acbc024c5b5c0237959dda298d5f35"
+    },
+    {
+      "path": "licenses/FR3D-MIT.txt",
+      "upstream_url": "https://raw.githubusercontent.com/BGSU-RNA/fr3d-python/ed850c00df01616e58c643b0f84bdc69662b5d55/license.txt",
+      "upstream_sha256": "d47dae789b5cf976f12975a538c894d13b65cdd796dba3f11ff5cc9aa0fb8b35",
+      "retained_sha256": "9f86de94cd43f18cd9cd9cb9aa70e38ed1fd7da5e8adabed56345335c5995453"
+    },
+    {
+      "path": "licenses/RNABind-MIT.txt",
+      "upstream_url": "https://raw.githubusercontent.com/jaminzzz/RNABind/7936279ff92a929a2de382ac902b9f1021c6c46b/LICENSE",
+      "upstream_sha256": "69d3e8b147aeb1e6c9cb7a9048331b229583aadbb3a1148bbdd5b0019ea3d0bc",
+      "retained_sha256": "69d3e8b147aeb1e6c9cb7a9048331b229583aadbb3a1148bbdd5b0019ea3d0bc"
+    },
+    {
+      "path": "licenses/dMaSIF-CC-BY-NC-ND-4.0.txt",
+      "upstream_url": "https://raw.githubusercontent.com/FreyrS/dMaSIF/0dcc26c3c218a39d5fe26beb2e788b95fb028896/LICENSE.md",
+      "upstream_sha256": "38762e3777f4ec00a6f769062a7c3f704fb78ce08303ecff88558da4c49cf9ea",
+      "retained_sha256": "f7f28b8c7a1af76b9874ca6d040e8b1eb6768fd1043106c9d315090ea96754e7"
+    },
+    {
+      "path": "licenses/CoBRA-license-notice.txt",
+      "upstream_url": "https://raw.githubusercontent.com/kucm-lsbi/CoBRA/415fd05cabf990f28a46cc2ba651531a28f7d249/LICENSE",
+      "upstream_sha256": "58dbf5d5eba9fda0cb32f823379e9a5ed549a31308f36bf72fa33c747e0fbcb9",
+      "retained_sha256": "58dbf5d5eba9fda0cb32f823379e9a5ed549a31308f36bf72fa33c747e0fbcb9"
+    },
+    {
+      "path": "licenses/fairseq-MIT.txt",
+      "upstream_url": "https://raw.githubusercontent.com/facebookresearch/fairseq/v0.12.2/LICENSE",
+      "upstream_sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85",
+      "retained_sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "licenses/PyTorch-LICENSE.txt",
+      "upstream_url": "https://raw.githubusercontent.com/pytorch/pytorch/v1.10.0/LICENSE",
+      "upstream_sha256": "6f598239866f2794b1170c870217a604b6acc98d4aeb4694d1a2f855da1f289c",
+      "retained_sha256": "6f598239866f2794b1170c870217a604b6acc98d4aeb4694d1a2f855da1f289c"
+    },
+    {
+      "path": "third_party/ERNIE-RNA-official/LICENSE",
+      "upstream_url": "https://raw.githubusercontent.com/Bruce-ywj/ERNIE-RNA/43bc06de1088ed03ffd7de918ad4b2c2a3346a43/LICENSE",
+      "retained_sha256": "b7aa7b89bff7b3c4cca2f78dc0900f038a7253bcbea9b780eca30b2bc1610ffb",
+      "note": "Existing upstream notice unchanged."
+    },
+    {
+      "path": "third_party/surface_tools/reduce-3.23/NOTICE",
+      "upstream_url": "https://github.com/rlabduke/reduce/tree/81b5b329156ba7f52c552314d7cbd9125376ad4d",
+      "retained_sha256": "0d66d69cfbd8a87481112a682025dfd9c4fe113230e3d5c9cfaea03a9b5dd2c6",
+      "note": "Attributed historical source-header excerpts; not an upstream standalone license file."
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/README",
+      "upstream_url": "https://ccsb.scripps.edu/msms/downloads/",
+      "retained_sha256": "b4d891e25e499a9021e85e0634dc81579447b0f4a30eade101702e0480444af9",
+      "note": "Historical checksum for an ignored, user-obtained local archive notice. Not bundled in the publication snapshot; absence is expected there.",
+      "local_only": true
+    },
+    {
+      "path": "licenses/GPL-3.0.txt",
+      "upstream_url": "https://raw.githubusercontent.com/gcc-mirror/gcc/master/COPYING3",
+      "upstream_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "retained_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+      "note": "Complete GPL v3 legal text from GNU GCC mirror, preserved for CoBRA-origin material; scope remains unresolved."
+    }
+  ],
+  "components": [
+    {
+      "id": "original_project",
+      "status": "author_approved_original_code",
+      "blocking": false,
+      "scope": [
+        "LICENSE",
+        "models/",
+        "train.py",
+        "evaluate.py",
+        "predict.py"
+      ],
+      "license": "MIT for original code and associated documentation only",
+      "copyright": "Copyright (c) 2026 Xueqiang Chao",
+      "approval_date": "2026-10-25",
+      "reason": "User approved the MIT license and the copyright name Xueqiang Chao. This does not clear incorporated third-party source or license datasets, weights or result assets.",
+      "action": "Preserve the original-code MIT notice; retain upstream terms and resolve the independent third-party and output-asset entries."
+    },
+    {
+      "id": "ernie_source",
+      "status": "notice_retained",
+      "blocking": false,
+      "scope": [
+        "third_party/ERNIE-RNA-official/"
+      ],
+      "license": "MIT",
+      "commit": "43bc06de1088ed03ffd7de918ad4b2c2a3346a43",
+      "reason": "MIT source notice preserved; local pruned subset described.",
+      "action": "Retain notice and modification statement; weights are a separate entry."
+    },
+    {
+      "id": "geobind_source",
+      "status": "upstream_notice_retained",
+      "blocking": false,
+      "scope": [
+        "models/surface.py",
+        "data_process/prepare_surface.py",
+        "data_process/pymesh_fix_official.py"
+      ],
+      "license": "MIT for GeoBind contributions; underlying dMaSIF unresolved",
+      "commit": "f8e336b8239fecf655d5a306ae56f887b1cf146e",
+      "reason": "GeoBind MIT preserved. This does not clear the dMaSIF lineage.",
+      "action": "Retain MIT and resolve dmasif_lineage before distributing the affected ports."
+    },
+    {
+      "id": "dmasif_lineage",
+      "status": "needs_permission",
+      "blocking": true,
+      "scope": [
+        "models/surface.py",
+        "data_process/prepare_surface.py"
+      ],
+      "license": "CC-BY-NC-ND-4.0 upstream",
+      "commit": "0dcc26c3c218a39d5fe26beb2e788b95fb028896",
+      "reason": "Modified implementation lineage through GeoBind; upstream disallows sharing adapted material under this grant.",
+      "action": "Obtain applicable additional permission or document another valid grant. Do not merely relabel the code MIT."
+    },
+    {
+      "id": "fr3d_definitions",
+      "status": "notice_retained",
+      "blocking": false,
+      "scope": [
+        "data_process/chemistry.py"
+      ],
+      "license": "MIT-style",
+      "commit": "ed850c00df01616e58c643b0f84bdc69662b5d55",
+      "reason": "Local donor/acceptor definitions match inspected source; notice added.",
+      "action": "Retain FR3D copyright and license; do not import discarded reference-frame code."
+    },
+    {
+      "id": "ernie_attention_encoder_lineage",
+      "status": "notices_retained",
+      "blocking": false,
+      "scope": [
+        "third_party/ERNIE-RNA-official/src/ernie_rna/"
+      ],
+      "license": "PyTorch BSD-style; fairseq MIT",
+      "reason": "Additional PyTorch v1.10.0 and fairseq v0.12.2 notices retained for source lineage.",
+      "action": "Keep these notices with the ERNIE subset; no dependency environment is redistributed."
+    },
+    {
+      "id": "graph_model_ancestry",
+      "status": "needs_provenance",
+      "blocking": true,
+      "scope": [
+        "models/semantic_spatial.py",
+        "models/ribosurfbind.py"
+      ],
+      "license": "NOT_ESTABLISHED for any copied upstream source",
+      "sources": [
+        {
+          "repo": "https://github.com/lixiangli01/ATMGBs",
+          "reviewed_head": "220a0611a3c3365f6c615830a3c72d6d2eb44a3c"
+        },
+        {
+          "repo": "https://github.com/cschen-y/MVRBind",
+          "reviewed_head": "067ec410d941eeed43a2e19fd830f4ad864a0eef"
+        },
+        {
+          "repo": "https://github.com/chennnM/GCNII"
+        }
+      ],
+      "reason": "Current notes mention ports/inspiration, but source-level lineage and grants for any copied expressions are not established.",
+      "action": "Distinguish independently implemented algorithms from copied/adapted source; obtain permission for the latter. Absence of a root notice is not proof that every file is forbidden."
+    },
+    {
+      "id": "reduce_323",
+      "status": "historical_notices_retained",
+      "blocking": false,
+      "scope": [
+        "third_party/surface_tools/reduce-3.23/reduce"
+      ],
+      "license": "Historical J. Michael Word free-software notice + UCSF libpdb notice + hybrid-36 acknowledgment",
+      "commit": "81b5b329156ba7f52c552314d7cbd9125376ad4d",
+      "reason": "Matching 3.23 version string in historical source; unchanged binary provenance retained.",
+      "action": "Include NOTICE with binary, credit UCSF/Duke, preserve original conditions. No claim of reproducible binary build."
+    },
+    {
+      "id": "msms_binary",
+      "status": "excluded_from_public_snapshot",
+      "blocking": false,
+      "scope": [
+        "third_party/surface_tools/msms-2.6.1/"
+      ],
+      "license": "Custom archive terms, clause 3",
+      "reason": "Program and archive attachments are local-only, ignored and excluded from the tracked publication tree. Users obtain the exact tool from Scripps; old experiment history still contains it.",
+      "action": "Use official download instructions in docs/EXTERNAL_ASSETS.md. Publish only a fresh snapshot/new history; do not push the old experiment history or force-add this installation."
+    },
+    {
+      "id": "pymesh_installation",
+      "status": "external_installation_only",
+      "blocking": false,
+      "scope": [
+        "environments/surface.yml",
+        "docs/ENVIRONMENTS.md",
+        "data_process/pymesh_fix_official.py"
+      ],
+      "license": "MPL (version not specified in v0.3 metadata); bundled dependencies have separate terms",
+      "commit": "146bf01bc9a389d2f1a70d5bf931a53ec452c7f0",
+      "reason": "Official v0.3 wheel is installed externally; wheel/container not tracked here.",
+      "action": "Use official download. Review all constituent licenses before redistributing a wheel/environment/container; do not call the whole binary MIT."
+    },
+    {
+      "id": "pdb_hariboss_archives",
+      "status": "data_policy_verified",
+      "blocking": false,
+      "scope": [
+        "data/raw/",
+        "examples/2JUK_A/input/"
+      ],
+      "license": "CC0-1.0 for original archive data only",
+      "evidence": [
+        "https://www.rcsb.org/pages/usage-policy",
+        "https://hariboss.pasteur.cloud/about-policies-logo"
+      ],
+      "reason": "Official archive policies state CC0; preserve provenance and recommended citations.",
+      "action": "Do not extend archive CC0 to third-party labels/splits/features/tensors without evidence."
+    },
+    {
+      "id": "rnabind_attribution",
+      "status": "notice_retained",
+      "blocking": false,
+      "scope": [
+        "data/raw/",
+        "data/splits/"
+      ],
+      "license": "MIT for RNABind software/material within grant",
+      "commit": "7936279ff92a929a2de382ac902b9f1021c6c46b",
+      "reason": "Upstream MIT added as RNABind-origin attribution, not blanket clearance of composite packages.",
+      "action": "Retain notice and resolve each asset's provenance and applicable terms."
+    },
+    {
+      "id": "mvrbind_grassp_data",
+      "status": "needs_permission_or_documented_terms",
+      "blocking": true,
+      "scope": [
+        "data/processed/",
+        "data/raw/provenance/",
+        "data/splits/",
+        "data/raw/annotations/"
+      ],
+      "license": "NOT_ESTABLISHED for copied releases",
+      "sources": [
+        {
+          "repo": "https://github.com/cschen-y/MVRBind",
+          "reviewed_head": "067ec410d941eeed43a2e19fd830f4ad864a0eef"
+        },
+        {
+          "repo": "https://github.com/langiocn/GRASSP",
+          "reviewed_head": "b2c34dcacf13848012969efc64f16ec85b3a22db"
+        }
+      ],
+      "reason": "Copies include source labels and released tensors. Inspected root listings/READMEs did not establish redistribution terms.",
+      "action": "Record applicable permission/license for exact assets, or provide lawful official-source acquisition workflow without changing frozen experiment bytes."
+    },
+    {
+      "id": "cobra_annotations_splits",
+      "status": "needs_data_scope_review",
+      "blocking": true,
+      "scope": [
+        "data/raw/provenance/jl10/provenance/CoBRA_JL10-bindingsite.txt",
+        "data/processed/hariboss_tr60.pt",
+        "data/processed/jl10.pt",
+        "data/processed/tl12.pt",
+        "data/splits/"
+      ],
+      "license": "GPL v3 declared by upstream; data scope unresolved",
+      "commit": "415fd05cabf990f28a46cc2ba651531a28f7d249",
+      "reason": "Short upstream GPL notice retained; concrete data coverage and distribution obligations not yet settled.",
+      "action": "Confirm scope and satisfy applicable GPL obligations, including full license where required. Do not infer all training code or weights become GPL."
+    },
+    {
+      "id": "ernie_checkpoint",
+      "status": "excluded_from_public_snapshot",
+      "blocking": false,
+      "scope": [
+        "checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt"
+      ],
+      "license": "NOT_ESTABLISHED for external Drive weight",
+      "evidence": [
+        "https://github.com/Bruce-ywj/ERNIE-RNA/blob/43bc06de1088ed03ffd7de918ad4b2c2a3346a43/checkpoint/ERNIE-RNA_checkpoint/ERNIE-RNA_checkpoint.txt"
+      ],
+      "reason": "External pretrained weight is local-only, ignored and not mirrored by the publication snapshot. Official download pointer, version, bytes and SHA-256 are provided; this is not a claim of mirror permission.",
+      "action": "Users obtain the official checkpoint and verify it before new feature extraction. Publish a fresh snapshot/new history without the old LFS checkpoint object; RiboSurfBind-trained weights are retained."
+    },
+    {
+      "id": "original_outputs",
+      "status": "author_approval_and_upstream_review",
+      "blocking": true,
+      "scope": [
+        "checkpoints/ (RiboSurfBind-trained weights, excluding ernie_rna)",
+        "data/processed/ (new features)",
+        "results/"
+      ],
+      "license": "UNSELECTED for output assets; original-code MIT does not automatically cover them",
+      "reason": "Self-trained weights/new outputs require author-approved scope and applicable upstream-term review.",
+      "action": "Select appropriate output/weight terms after rights-holder approval. Do not assume software license propagation to outputs."
+    }
+  ],
+  "restricted_history_paths": [
+    "third_party/surface_tools/msms-2.6.1/",
+    "checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt"
+  ]
+}

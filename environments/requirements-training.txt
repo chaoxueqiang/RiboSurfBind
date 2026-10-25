@@ -1,0 +1,14 @@
+# Python 3.8.20; requires a system C++ compiler for KeOps.
+torch==2.2.0
+numpy==1.24.4
+scipy==1.10.1
+scikit-learn==1.3.2
+biopython==1.83
+matplotlib==3.7.5
+pandas==2.0.3
+torch-geometric==2.6.1
+pykeops==2.1
+keopscore==2.1
+pybind11==2.13.6
+cmake==3.27.9
+ninja==1.11.1.1

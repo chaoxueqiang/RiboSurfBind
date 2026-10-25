@@ -1,0 +1,82 @@
+Reduce 3.23.130521 -- historical attribution and license notices
+=============================================================
+
+The bundled executable is unchanged. SHA-256:
+6d066f88bff740627d7c1d2fb0200d326978fe70a0c041a2528c8853e682b1ce
+
+Historical source (version string reduce.3.23.130521):
+https://github.com/rlabduke/reduce/tree/81b5b329156ba7f52c552314d7cbd9125376ad4d
+Notices below come from that source, not a later Apache relicensing.
+This does not claim a byte-reproducible binary build.
+
+This product includes software developed in the Richardson Lab at Duke
+University and at the University of California, San Francisco.
+Reference: Word et al. (1999), J. Mol. Biol. 285, 1735-1747.
+
+From reduce_src/reduce.cpp:
+
+// **************************************************************
+// NOTICE: This is free software and the source code is freely
+// available. You are free to redistribute or modify under the
+// conditions that (1) this notice is not removed or modified
+// in any way and (2) any modified versions of the program are
+// also available for free.
+//               ** Absolutely no Warranty **
+// Copyright (C) 1999-2013 J. Michael Word
+// **************************************************************
+
+From toolclasses/Point3d.cpp:
+
+// **************************************************************
+// NOTICE: This is free software and the source code is freely
+// available. You are free to redistribute or modify under the
+// conditions that (1) this notice is not removed or modified
+// in any way and (2) any modified versions of the program are
+// also available for free.
+//               ** Absolutely no Warranty **
+// Copyright (C) 1999 J. Michael Word
+// **************************************************************
+
+From libpdb/pdb_chars.cpp:
+
+//
+// with Modifications by J. Michael Word, Duke University
+//
+//	Copyright (c) 1989,1992 The Regents of the University of California.
+//	All rights reserved.
+//
+//	Redistribution and use in source and binary forms are permitted
+//	provided that the above copyright notice and this paragraph are
+//	duplicated in all such forms and that any documentation,
+//	advertising materials, and other materials related to such
+//	distribution and use acknowledge that the software was developed
+//	by the University of California, San Francisco.  The name of the
+//	University may not be used to endorse or promote products derived
+//	from this software without specific prior written permission.
+//	THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+//	IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+//	WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+//
+
+libpdb/pdb++.h and pdb++.cpp have the same terms, with:
+//	Copyright (c) 1992 The Regents of the University of California.
+libpdb/pdb_read.cpp has the same terms, with:
+//	Copyright (c) 1989, 1992 The Regents of the University of California.
+
+From reduce_src/hybrid_36_c.c:
+
+/*! C port of the hy36encode() and hy36decode() functions in the
+    hybrid_36.py Python prototype/reference implementation.
+    See the Python script for more information.
+
+    This file has no external dependencies, NOT even standard C headers.
+    Optionally, use hybrid_36_c.h, or simply copy the declarations
+    into your code.
+
+    This file is unrestricted Open Source (cctbx.sf.net).
+    Please send corrections and enhancements to cctbx@cci.lbl.gov .
+
+    See also: http://cci.lbl.gov/hybrid_36/
+
+    Ralf W. Grosse-Kunstleve, Feb 2007.
+ */

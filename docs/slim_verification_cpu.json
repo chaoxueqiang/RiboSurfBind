@@ -1,0 +1,436 @@
+{
+  "device": "cpu",
+  "torch": "2.2.0+cu121",
+  "strict_deterministic_algorithms": true,
+  "initialization": [
+    {
+      "checkpoint": "checkpoints/train60/seed1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set1/seed1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set2/seed1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set3/seed1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set4/seed1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set1/seed2/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set2/seed2/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set3/seed2/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set4/seed2/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set1/seed3/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set2/seed3/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set3/seed3/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set4/seed3/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set1/seed4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set2/seed4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set3/seed4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set4/seed4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set1/seed5/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set2/seed5/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set3/seed5/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss/set4/seed5/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss_tr60/seed15/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss_tr60/seed20/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss_tr60/seed24/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss_tr60/seed28/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss_tr60/seed46/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/ablations/att_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/ablations/surface_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/ablations/semantic_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/ablations/spatial_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/ablations/no_relation_gate/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/attention_depth/1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/attention_depth/2/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/attention_depth/3/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/attention_depth/4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/attention_depth/5/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/attention_depth/6/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/6/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/8/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/10/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/12/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/16/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/semantic_topk/20/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/spatial_knn/4/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/spatial_knn/6/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/spatial_knn/8/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/spatial_knn/10/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/spatial_knn/12/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/sensitivity/spatial_knn/16/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/hariboss_tr60/seed1/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/case_models/hariboss/att_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/case_models/hariboss/surface_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/case_models/external/att_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    },
+    {
+      "checkpoint": "checkpoints/case_models/external/surface_only/best_model.pt",
+      "initial_parameters_rng_and_parameter_order_equal": true,
+      "strict_load": true
+    }
+  ],
+  "graph_branch": [
+    {
+      "variant": "depth1",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth2",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth3",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth4",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth5",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth6",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk4",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk6",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk8",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk10",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk12",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk16",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "topk20",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "knn4",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "knn6",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "knn8",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "knn10",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "knn12",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "knn16",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "att_only",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "surface_only",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "semantic_only",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "spatial_only",
+      "output_gradient_rng_bitwise_equal": true
+    },
+    {
+      "variant": "no_relation_gate",
+      "output_gradient_rng_bitwise_equal": true
+    }
+  ],
+  "molecular_training_step": [
+    {
+      "variant": "full_test18",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "full_hariboss",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "full_external",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "att_only",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "surface_only",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "semantic_only",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "spatial_only",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    },
+    {
+      "variant": "no_relation_gate",
+      "eval_repeat_loss_gradient_rng_adam_bitwise_equal": true
+    }
+  ],
+  "whole_test18": {
+    "nodes": 610,
+    "probabilities_bitwise_equal": true,
+    "metrics": {
+      "auc": 0.7569197204540824,
+      "aupr": 0.6368787128898107,
+      "precision": 0.6962962962962963,
+      "recall": 0.45410628019323673,
+      "f1": 0.5497076023391813,
+      "mcc": 0.4019037696470784,
+      "accuracy": 0.7475409836065574,
+      "tp": 94,
+      "tn": 362,
+      "fp": 41,
+      "fn": 113,
+      "threshold": 0.5,
+      "loss_mean_graph": 0.585901795162095,
+      "mean_graph_mcc": 0.3564197692796051,
+      "records": 18
+    }
+  },
+  "status": "PASS"
+}

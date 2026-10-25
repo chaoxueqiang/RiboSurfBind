@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "source_directory": "data-原始的形式",
+  "destination_directory": "data",
+  "source_untouched": true,
+  "feature_reextraction": false,
+  "model_parameters_changed": false,
+  "package_counts": {
+    "train60": {
+      "records": 60,
+      "nucleotides": 3054,
+      "positives": 950,
+      "negatives": 2104
+    },
+    "test18": {
+      "records": 18,
+      "nucleotides": 610,
+      "positives": 207,
+      "negatives": 403
+    },
+    "hariboss": {
+      "records": 353,
+      "nucleotides": 35114,
+      "positives": 4958,
+      "negatives": 30156
+    },
+    "hariboss_tr60": {
+      "records": 432,
+      "nucleotides": 22432,
+      "positives": 7085,
+      "negatives": 15347
+    },
+    "tl12": {
+      "records": 12,
+      "nucleotides": 515,
+      "positives": 183,
+      "negatives": 332
+    },
+    "jl10": {
+      "records": 10,
+      "nucleotides": 821,
+      "positives": 264,
+      "negatives": 557
+    }
+  },
+  "runtime_layout": [
+    "data/processed",
+    "data/splits"
+  ],
+  "inspection_layout": "data/raw",
+  "original_source_files": 4309,
+  "release_asset_files": 1440,
+  "modified_or_added_code_docs": [
+    ".gitignore",
+    "README.md",
+    "train.py",
+    "evaluate.py",
+    "predict.py",
+    "models/ribosurfbind.py",
+    "models/surface.py",
+    "data_process/dataset.py",
+    "data_process/attention.py",
+    "data_process/packed.py",
+    "data_process/pack_dataset.py",
+    "data_process/prepare_surface.py",
+    "data_process/validate_cache.py",
+    "utils/engine.py",
+    "tests/test_release.py",
+    "docs/PREPROCESSING.md",
+    "docs/REPRODUCIBILITY.md",
+    "docs/data_package_verification_cpu.json",
+    "docs/data_package_verification_cuda.json",
+    "docs/data_migration_report.json",
+    "docs/release_asset_checksums.csv"
+  ],
+  "strict_checkpoints": 55,
+  "fast_tests": 11,
+  "verification": [
+    "all 885 record inputs including surfaces: bitwise identical",
+    "all original source file SHA-256 values unchanged",
+    "all official split IDs and order unchanged",
+    "55 architectures: initial parameters, RNG, parameter order, strict checkpoint loading",
+    "CPU and CUDA: eight molecular training scenarios, two-RNA variable-size batch",
+    "CPU and CUDA: identical loss, gradients, clipping, one Adam update and optimizer moments",
+    "CPU and CUDA: complete Test18/TL12/JL10 probabilities and metrics identical",
+    "CPU and CUDA: two test RNAs per HARIBOSS Set1-4 identical",
+    "train.py smoke-only, evaluate.py and predict.py CLI exercised",
+    "epoch-boundary engine resume fast test"
+  ],
+  "scope_limitations": [
+    "No full 100-epoch experiment retrained",
+    "CPU and CUDA are compared before/after within each device, not across devices",
+    "Strict repeatability requires the same compatible software/hardware environment"
+  ]
+}

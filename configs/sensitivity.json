@@ -1,0 +1,5 @@
+{
+  "attention_depth": [1,2,3,4,5,6],
+  "semantic_topk": [4,6,8,10,12,16,20],
+  "spatial_knn": [4,6,8,10,12,16]
+}

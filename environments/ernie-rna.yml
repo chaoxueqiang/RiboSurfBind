@@ -1,0 +1,23 @@
+# Frozen feature extraction only; do not replace the paper training environment.
+# This creates the base environment. Complete installation with the explicit
+# fairseq --no-build-isolation command in docs/ENVIRONMENTS.md.
+name: ribosurfbind-ernie
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.9.23
+  - pytorch=1.10.0
+  - torchaudio=0.10.0
+  - cpuonly
+  - numpy=1.26.4
+  - scipy=1.13.1
+  - scikit-learn=1.6.1
+  - pip=23.3.1
+  - setuptools=68.2.2
+  - wheel=0.41.3
+  - cython=0.29.36
+  - cxx-compiler
+  - pip:
+      - omegaconf==2.0.6
+      - hydra-core==1.0.7

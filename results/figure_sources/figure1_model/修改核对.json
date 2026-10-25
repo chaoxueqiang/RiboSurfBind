@@ -1,0 +1,12 @@
+{
+  "removed_text": [
+    "4 layers · shared graphs · unshared weights · ReLU after each sum",
+    "αT₁",
+    "αT₂",
+    "αTₗ",
+    "* Equivalent GCNII split: Tₗ = θₗWₗ + (1 − θₗ)I; layer-input residual inside blocks."
+  ],
+  "removed_asterisks": 2,
+  "all_shapes_connectors_and_embedded_images_unchanged": true,
+  "word_unchanged": true
+}

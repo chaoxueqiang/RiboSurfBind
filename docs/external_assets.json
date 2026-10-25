@@ -1,0 +1,30 @@
+{
+  "schema": "ribosurfbind_external_assets_v1",
+  "release_exclusions": [
+    "third_party/surface_tools/msms-2.6.1/",
+    "checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt"
+  ],
+  "assets": {
+    "msms": {
+      "path": "third_party/surface_tools/msms-2.6.1/msms.x86_64Linux2.2.6.1.staticgcc",
+      "version": "2.6.1 static Linux",
+      "bytes": 943144,
+      "sha256": "739b88d8195b89ee5a9c00ef7b986f6bb9d32f7d3b200f457781c98b95958088",
+      "official_url": "https://ccsb.scripps.edu/msms/downloads/",
+      "archive": "msms_i86_64Linux2_2.6.1.tar.gz",
+      "archive_sha256": "5f0ca50360b5938e74c538e0399d582abc4a40ef4cf410e66f31a1f91e6e3e1f",
+      "terms": "Obtain directly from Scripps under its terms. This repository does not mirror the program or its archive.",
+      "needed_for": "Recomputing molecular-surface features only; not packed training/evaluation."
+    },
+    "ernie": {
+      "path": "checkpoints/ernie_rna/ERNIE-RNA_pretrain.pt",
+      "version": "ERNIE-RNA pretrained checkpoint linked by upstream commit 43bc06de1088ed03ffd7de918ad4b2c2a3346a43",
+      "bytes": 1035221383,
+      "sha256": "50ac42d4a2af361b8a7d9fb62546e3f380c32893b179554609440339a6676851",
+      "official_url": "https://drive.google.com/file/d/1CmNxJxgjDhRoBdlDODFFjDNNzJMHVzmO/view",
+      "upstream_pointer": "https://github.com/Bruce-ywj/ERNIE-RNA/blob/43bc06de1088ed03ffd7de918ad4b2c2a3346a43/checkpoint/ERNIE-RNA_checkpoint/ERNIE-RNA_checkpoint.txt",
+      "terms": "Obtain from the official authors under the applicable checkpoint terms; no mirror permission is asserted here.",
+      "needed_for": "Extracting new frozen embeddings/attention only; not packed training/evaluation."
+    }
+  }
+}

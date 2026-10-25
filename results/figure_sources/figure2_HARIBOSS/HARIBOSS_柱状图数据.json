@@ -1,0 +1,154 @@
+[
+  {
+    "RLBind": {
+      "AUC": 0.712,
+      "Precision": 0.302,
+      "Recall": 0.26,
+      "MCC": 0.125
+    },
+    "RNet": {
+      "AUC": 0.731,
+      "Precision": 0.364,
+      "Recall": 0.295,
+      "MCC": 0.188
+    },
+    "RNABind": {
+      "AUC": 0.757,
+      "Precision": 0.3,
+      "Recall": 0.29,
+      "MCC": 0.232
+    },
+    "MVRBind": {
+      "AUC": 0.785,
+      "Precision": 0.411,
+      "Recall": 0.308,
+      "MCC": 0.306
+    },
+    "GRASSP": {
+      "AUC": 0.816,
+      "Precision": 0.541,
+      "Recall": 0.537,
+      "MCC": 0.424
+    },
+    "RiboSurfBind": {
+      "AUC": 0.8935440401415061,
+      "Precision": 0.7186163312157368,
+      "Recall": 0.5390123456790124,
+      "MCC": 0.5475393057315822
+    }
+  },
+  {
+    "RLBind": {
+      "AUC": 0.711,
+      "Precision": 0.278,
+      "Recall": 0.14,
+      "MCC": 0.147
+    },
+    "RNet": {
+      "AUC": 0.717,
+      "Precision": 0.178,
+      "Recall": 0.034,
+      "MCC": 0.044
+    },
+    "RNABind": {
+      "AUC": 0.707,
+      "Precision": 0.266,
+      "Recall": 0.108,
+      "MCC": 0.055
+    },
+    "MVRBind": {
+      "AUC": 0.74,
+      "Precision": 0.33,
+      "Recall": 0.202,
+      "MCC": 0.207
+    },
+    "GRASSP": {
+      "AUC": 0.776,
+      "Precision": 0.387,
+      "Recall": 0.278,
+      "MCC": 0.253
+    },
+    "RiboSurfBind": {
+      "AUC": 0.8742524375454765,
+      "Precision": 0.6728042426361046,
+      "Recall": 0.31013824884792623,
+      "MCC": 0.4244242793817117
+    }
+  },
+  {
+    "RLBind": {
+      "AUC": 0.661,
+      "Precision": 0.178,
+      "Recall": 0.06,
+      "MCC": 0.05
+    },
+    "RNet": {
+      "AUC": 0.673,
+      "Precision": 0.204,
+      "Recall": 0.185,
+      "MCC": 0.112
+    },
+    "RNABind": {
+      "AUC": 0.688,
+      "Precision": 0.23,
+      "Recall": 0.113,
+      "MCC": 0.032
+    },
+    "MVRBind": {
+      "AUC": 0.697,
+      "Precision": 0.266,
+      "Recall": 0.27,
+      "MCC": 0.188
+    },
+    "GRASSP": {
+      "AUC": 0.781,
+      "Precision": 0.323,
+      "Recall": 0.288,
+      "MCC": 0.219
+    },
+    "RiboSurfBind": {
+      "AUC": 0.8648159243172143,
+      "Precision": 0.5331675289442731,
+      "Recall": 0.2946959896507115,
+      "MCC": 0.34790458912089706
+    }
+  },
+  {
+    "RLBind": {
+      "AUC": 0.601,
+      "Precision": 0.259,
+      "Recall": 0.28,
+      "MCC": 0.204
+    },
+    "RNet": {
+      "AUC": 0.657,
+      "Precision": 0.212,
+      "Recall": 0.047,
+      "MCC": 0.066
+    },
+    "RNABind": {
+      "AUC": 0.685,
+      "Precision": 0.232,
+      "Recall": 0.216,
+      "MCC": 0.144
+    },
+    "MVRBind": {
+      "AUC": 0.693,
+      "Precision": 0.272,
+      "Recall": 0.341,
+      "MCC": 0.22
+    },
+    "GRASSP": {
+      "AUC": 0.86,
+      "Precision": 0.375,
+      "Recall": 0.39,
+      "MCC": 0.318
+    },
+    "RiboSurfBind": {
+      "AUC": 0.9058529950497747,
+      "Precision": 0.5330223457895102,
+      "Recall": 0.3095238095238095,
+      "MCC": 0.3676748983575565
+    }
+  }
+]

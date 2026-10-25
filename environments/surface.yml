@@ -1,0 +1,12 @@
+# PyMesh ABI helper only. Run the main preparation script in the training env.
+name: ribosurfbind-surface
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7.13
+  - numpy=1.21.6
+  - scipy=1.7.3
+  - scikit-learn=1.0.2
+  - pip=23.1.2
+# Then install the official Linux cp37 PyMesh 0.3 wheel after checking its SHA256.
+# See docs/ENVIRONMENTS.md; the platform-specific third-party wheel is not vendored.

@@ -1,0 +1,175 @@
+{
+  "status": "complete",
+  "deleted_targets": [
+    {
+      "path": ".archive",
+      "files": 10733,
+      "bytes": 7364971878
+    },
+    {
+      "path": "tests/check_equivalence.py",
+      "files": 1,
+      "bytes": 7485
+    },
+    {
+      "path": "tests/fixtures",
+      "files": 1,
+      "bytes": 3338
+    },
+    {
+      "path": "data/jl10/provenance/extract_ernie_same_as_cobra.py",
+      "files": 1,
+      "bytes": 5393
+    },
+    {
+      "path": "data/jl10/provenance/validate_dataset.py",
+      "files": 1,
+      "bytes": 4837
+    },
+    {
+      "path": "third_party/ERNIE-RNA-official/src/downstream_heads",
+      "files": 2,
+      "bytes": 5991
+    },
+    {
+      "path": "third_party/surface_tools/reduce-3.23/reduce.gz",
+      "files": 1,
+      "bytes": 765658
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/1crn.pdb",
+      "files": 1,
+      "bytes": 34506
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/1crn.xyzr",
+      "files": 1,
+      "bytes": 10464
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/1crn.xyzrn",
+      "files": 1,
+      "bytes": 16029
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/pdb_to_xyzr",
+      "files": 1,
+      "bytes": 2777
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/pdb_to_xyzrn",
+      "files": 1,
+      "bytes": 2835
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/atmtypenumbers",
+      "files": 1,
+      "bytes": 9915
+    },
+    {
+      "path": "third_party/surface_tools/msms-2.6.1/msms.x86_64Linux2.2.6.1",
+      "files": 1,
+      "bytes": 186029
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1AKX_ATT.pse",
+      "files": 1,
+      "bytes": 277709
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1AKX_Full.pse",
+      "files": 1,
+      "bytes": 277709
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1AKX_Surface.pse",
+      "files": 1,
+      "bytes": 277709
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1NEM_A_ATT.pse",
+      "files": 1,
+      "bytes": 232965
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1NEM_A_Full.pse",
+      "files": 1,
+      "bytes": 232980
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1NEM_A_Surface.pse",
+      "files": 1,
+      "bytes": 232980
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1Q8N_A_ATT.pse",
+      "files": 1,
+      "bytes": 357851
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1Q8N_A_Full.pse",
+      "files": 1,
+      "bytes": 357866
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/1Q8N_A_Surface.pse",
+      "files": 1,
+      "bytes": 357866
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/7L0Z_G_ATT.pse",
+      "files": 1,
+      "bytes": 421480
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/7L0Z_G_Full.pse",
+      "files": 1,
+      "bytes": 421480
+    },
+    {
+      "path": "results/figure_sources/figure4_cases/7L0Z_G_Surface.pse",
+      "files": 1,
+      "bytes": 421480
+    },
+    {
+      "path": "results/figure_sources/figure2_HARIBOSS/HARIBOSS_柱状图数据.csv",
+      "files": 1,
+      "bytes": 954
+    }
+  ],
+  "files": 10760,
+  "bytes": 7369898164,
+  "original_backup": "/home2/2025/25cxq/paper_code",
+  "original_directories_modified": false,
+  "required_training_data_and_checkpoints_removed": false,
+  "validation": {
+    "status": "PASS",
+    "strict_checkpoints_and_initialization_rng": 55,
+    "fusion_forward_and_gradients_bitwise_equal": 55,
+    "ernie_extraction_before_after_bitwise_equal": true
+  },
+  "retained_checksummed_assets": 4420,
+  "compatibility_layers_retained": [
+    "lin4",
+    "lin1",
+    "lin2",
+    "bn1"
+  ],
+  "recovery": "Historical originals remain in sibling paper_code; deleted here, not moved to another local archive.",
+  "post_cleanup_tests": {
+    "fast_cpu_tests": 5,
+    "asset_files_verified": 4420,
+    "predict_csv_bitwise_equal": true,
+    "ernie_extraction_cli": "PASS"
+  },
+  "edited_code_paths": [
+    "models/ribosurfbind.py",
+    "models/surface.py",
+    "models/fusion.py",
+    "data_process/attention.py",
+    "evaluate.py",
+    "scripts/render_cases.py",
+    "third_party/ERNIE-RNA-official/extract_embedding.py",
+    "third_party/ERNIE-RNA-official/src/utils.py"
+  ]
+}

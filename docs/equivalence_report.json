@@ -1,0 +1,152 @@
+{
+  "initialization": [
+    {
+      "variant": "full",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth1",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth2",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth3",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth4",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth5",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "depth6",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "att_only",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "surface_only",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "semantic_only",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "spatial_only",
+      "state_and_rng_bitwise_equal": true
+    },
+    {
+      "variant": "no_relation_gate",
+      "state_and_rng_bitwise_equal": true
+    }
+  ],
+  "forward": [
+    {
+      "dataset": "test18",
+      "variant": "full",
+      "nodes": 73,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "test18",
+      "variant": "att_only",
+      "nodes": 73,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "test18",
+      "variant": "surface_only",
+      "nodes": 73,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "test18",
+      "variant": "semantic_only",
+      "nodes": 73,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "test18",
+      "variant": "spatial_only",
+      "nodes": 73,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "test18",
+      "variant": "no_relation_gate",
+      "nodes": 73,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "hariboss",
+      "variant": "full",
+      "nodes": 184,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "jl10",
+      "variant": "full",
+      "nodes": 184,
+      "probabilities_bitwise_equal": true
+    },
+    {
+      "dataset": "tl12",
+      "variant": "full",
+      "nodes": 65,
+      "probabilities_bitwise_equal": true
+    }
+  ],
+  "training_step": [
+    {
+      "variant": "full",
+      "loss_gradient_adam_update_rng_bitwise_equal": true
+    },
+    {
+      "variant": "att_only",
+      "loss_gradient_adam_update_rng_bitwise_equal": true
+    },
+    {
+      "variant": "surface_only",
+      "loss_gradient_adam_update_rng_bitwise_equal": true
+    },
+    {
+      "variant": "semantic_only",
+      "loss_gradient_adam_update_rng_bitwise_equal": true
+    },
+    {
+      "variant": "spatial_only",
+      "loss_gradient_adam_update_rng_bitwise_equal": true
+    },
+    {
+      "variant": "no_relation_gate",
+      "loss_gradient_adam_update_rng_bitwise_equal": true
+    }
+  ],
+  "published_test18": {
+    "auc": 0.7569197204540824,
+    "aupr": 0.6368787128898107,
+    "precision": 0.6962962962962963,
+    "recall": 0.45410628019323673,
+    "f1": 0.5497076023391813,
+    "mcc": 0.4019037696470784,
+    "accuracy": 0.7475409836065574,
+    "tp": 94,
+    "tn": 362,
+    "fp": 41,
+    "fn": 113,
+    "threshold": 0.5,
+    "loss_mean_graph": 0.585901795162095,
+    "mean_graph_mcc": 0.3564197692796051,
+    "records": 18
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,142 @@
+{
+  "status": "complete",
+  "trial_dir": "/home2/2025/25cxq/my_mvrbind/双分支多seed/trail20-HARIBOSS+Train60-多seed/seed15/Set1",
+  "checkpoint_evaluations": {
+    "validation_mcc": {
+      "checkpoint": "/home2/2025/25cxq/my_mvrbind/双分支多seed/trail20-HARIBOSS+Train60-多seed/seed15/Set1/best_validation_mcc.pt",
+      "epoch": 82,
+      "internal_validation_summary": null,
+      "splits": {
+        "jl10": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.7478684531059683,
+            "precision": 0.6338028169014085,
+            "recall": 0.5113636363636364,
+            "specificity": 0.8599640933572711,
+            "f1": 0.5660377358490567,
+            "mcc": 0.3956811415831396,
+            "mean_graph_mcc": 0.3965449612988839,
+            "roc_auc": 0.788422827920135,
+            "pr_auc": 0.671113800076206,
+            "tn": 479,
+            "fp": 78,
+            "fn": 129,
+            "tp": 135,
+            "positive_predictions": 213,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "fixed_0_83": {
+            "threshold": 0.83,
+            "accuracy": 0.7429963459196103,
+            "precision": 0.8192771084337349,
+            "recall": 0.25757575757575757,
+            "specificity": 0.9730700179533214,
+            "f1": 0.3919308357348703,
+            "mcc": 0.3573615626053411,
+            "mean_graph_mcc": 0.32296709124943335,
+            "roc_auc": 0.788422827920135,
+            "pr_auc": 0.671113800076206,
+            "tn": 542,
+            "fp": 15,
+            "fn": 196,
+            "tp": 68,
+            "positive_predictions": 83,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "best_pooled_mcc": {
+            "threshold": 0.66,
+            "accuracy": 0.7637028014616322,
+            "precision": 0.7397260273972602,
+            "recall": 0.4090909090909091,
+            "specificity": 0.9317773788150808,
+            "f1": 0.526829268292683,
+            "mcc": 0.41637806824796625,
+            "mean_graph_mcc": 0.4038335868260326,
+            "roc_auc": 0.788422827920135,
+            "pr_auc": 0.671113800076206,
+            "tn": 519,
+            "fp": 38,
+            "fn": 156,
+            "tp": 108,
+            "positive_predictions": 146,
+            "node_count": 821,
+            "graph_count": 10
+          }
+        }
+      }
+    },
+    "validation_loss": {
+      "checkpoint": "/home2/2025/25cxq/my_mvrbind/双分支多seed/trail20-HARIBOSS+Train60-多seed/seed15/Set1/lowest_validation_loss.pt",
+      "epoch": 92,
+      "internal_validation_summary": null,
+      "splits": {
+        "jl10": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.7503045066991474,
+            "precision": 0.642512077294686,
+            "recall": 0.5037878787878788,
+            "specificity": 0.8671454219030521,
+            "f1": 0.5647558386411891,
+            "mcc": 0.3989845022955327,
+            "mean_graph_mcc": 0.39851051099675533,
+            "roc_auc": 0.7831864425221697,
+            "pr_auc": 0.6657232126770661,
+            "tn": 483,
+            "fp": 74,
+            "fn": 131,
+            "tp": 133,
+            "positive_predictions": 207,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "fixed_0_83": {
+            "threshold": 0.83,
+            "accuracy": 0.7393422655298416,
+            "precision": 0.8289473684210527,
+            "recall": 0.23863636363636365,
+            "specificity": 0.9766606822262118,
+            "f1": 0.3705882352941176,
+            "mcc": 0.34696262855271465,
+            "mean_graph_mcc": 0.3061748954550458,
+            "roc_auc": 0.7831864425221697,
+            "pr_auc": 0.6657232126770661,
+            "tn": 544,
+            "fp": 13,
+            "fn": 201,
+            "tp": 63,
+            "positive_predictions": 76,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "best_pooled_mcc": {
+            "threshold": 0.48,
+            "accuracy": 0.7539585870889159,
+            "precision": 0.6448598130841121,
+            "recall": 0.5227272727272727,
+            "specificity": 0.8635547576301615,
+            "f1": 0.5774058577405857,
+            "mcc": 0.4109914945520779,
+            "mean_graph_mcc": 0.4112938137137542,
+            "roc_auc": 0.7831864425221697,
+            "pr_auc": 0.6657232126770661,
+            "tn": 481,
+            "fp": 76,
+            "fn": 126,
+            "tp": 138,
+            "positive_predictions": 214,
+            "node_count": 821,
+            "graph_count": 10
+          }
+        }
+      }
+    }
+  },
+  "evaluation_only": true,
+  "data_root": "/home2/2025/25cxq/my_mvrbind/my_pt/tl12-jl10",
+  "threshold_rule": "score > threshold",
+  "scan_note": "Test-set threshold scan is diagnostic, not independent validation"
+}

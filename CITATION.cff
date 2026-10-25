@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the RiboSurfBind manuscript. Bibliographic metadata will be finalized at publication."
+title: RiboSurfBind
+authors:
+  - name: RiboSurfBind authors
+type: software
+version: 0.1.0
+abstract: "RNA-small molecule binding site prediction with semantic-spatial residue learning and molecular-surface learning."

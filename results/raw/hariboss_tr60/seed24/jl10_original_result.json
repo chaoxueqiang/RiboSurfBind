@@ -1,0 +1,268 @@
+{
+  "status": "complete",
+  "data_root": "/home2/2025/25cxq/my_mvrbind/my_pt/tl12-jl10",
+  "protocols": {
+    "jl10": "JL10_GRASSP_CoBRA_sequence_GTP_removed_821",
+    "tl12": "CoBRA/GRASSP TL12-12"
+  },
+  "checkpoint_evaluations": {
+    "validation_mcc": {
+      "epoch": 64,
+      "checkpoint": "/home2/2025/25cxq/my_mvrbind/双分支多seed/trail20-HARIBOSS+Train60-多seed/seed24/Set1/best_validation_mcc.pt",
+      "splits": {
+        "jl10": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.7271619975639464,
+            "precision": 0.5775193798449613,
+            "recall": 0.5643939393939394,
+            "specificity": 0.8043087971274686,
+            "f1": 0.5708812260536399,
+            "mcc": 0.370972632225452,
+            "mean_graph_mcc": 0.3905220999658608,
+            "roc_auc": 0.7978143191338882,
+            "pr_auc": 0.676324691824748,
+            "tn": 448,
+            "fp": 109,
+            "fn": 115,
+            "tp": 149,
+            "positive_predictions": 258,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "diagnostic_best_pooled_mcc": {
+            "threshold": 0.62,
+            "accuracy": 0.758830694275274,
+            "precision": 0.675531914893617,
+            "recall": 0.4810606060606061,
+            "specificity": 0.8904847396768402,
+            "f1": 0.5619469026548671,
+            "mcc": 0.4130100376748394,
+            "mean_graph_mcc": 0.4326944616960196,
+            "roc_auc": 0.7978143191338882,
+            "pr_auc": 0.676324691824748,
+            "tn": 496,
+            "fp": 61,
+            "fn": 137,
+            "tp": 127,
+            "positive_predictions": 188,
+            "node_count": 821,
+            "graph_count": 10
+          }
+        },
+        "tl12": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.8349514563106796,
+            "precision": 0.8181818181818182,
+            "recall": 0.6885245901639344,
+            "specificity": 0.9156626506024096,
+            "f1": 0.7477744807121662,
+            "mcc": 0.6316146212591217,
+            "mean_graph_mcc": 0.5863438139396725,
+            "roc_auc": 0.8912370794654026,
+            "pr_auc": 0.8487635199472101,
+            "tn": 304,
+            "fp": 28,
+            "fn": 57,
+            "tp": 126,
+            "positive_predictions": 154,
+            "node_count": 515,
+            "graph_count": 12
+          },
+          "diagnostic_best_pooled_mcc": {
+            "threshold": 0.44,
+            "accuracy": 0.8427184466019417,
+            "precision": 0.8035714285714286,
+            "recall": 0.7377049180327869,
+            "specificity": 0.9006024096385542,
+            "f1": 0.7692307692307693,
+            "mcc": 0.6516359540985368,
+            "mean_graph_mcc": 0.5932730692739517,
+            "roc_auc": 0.8912370794654026,
+            "pr_auc": 0.8487635199472101,
+            "tn": 299,
+            "fp": 33,
+            "fn": 48,
+            "tp": 135,
+            "positive_predictions": 168,
+            "node_count": 515,
+            "graph_count": 12
+          }
+        }
+      }
+    },
+    "validation_auc": {
+      "epoch": 87,
+      "checkpoint": "/home2/2025/25cxq/my_mvrbind/双分支多seed/trail20-HARIBOSS+Train60-多seed/seed24/Set1/best_validation_auc.pt",
+      "splits": {
+        "jl10": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.7490864799025578,
+            "precision": 0.6435643564356436,
+            "recall": 0.49242424242424243,
+            "specificity": 0.8707360861759426,
+            "f1": 0.5579399141630902,
+            "mcc": 0.3938283284815263,
+            "mean_graph_mcc": 0.4231965968750031,
+            "roc_auc": 0.7939924378434254,
+            "pr_auc": 0.6722608473369432,
+            "tn": 485,
+            "fp": 72,
+            "fn": 134,
+            "tp": 130,
+            "positive_predictions": 202,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "diagnostic_best_pooled_mcc": {
+            "threshold": 0.26,
+            "accuracy": 0.7210718635809987,
+            "precision": 0.5531914893617021,
+            "recall": 0.6893939393939394,
+            "specificity": 0.7360861759425493,
+            "f1": 0.6138279932546374,
+            "mcc": 0.40553498756667045,
+            "mean_graph_mcc": 0.41685435710185265,
+            "roc_auc": 0.7939924378434254,
+            "pr_auc": 0.6722608473369432,
+            "tn": 410,
+            "fp": 147,
+            "fn": 82,
+            "tp": 182,
+            "positive_predictions": 329,
+            "node_count": 821,
+            "graph_count": 10
+          }
+        },
+        "tl12": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.8252427184466019,
+            "precision": 0.8394160583941606,
+            "recall": 0.6284153005464481,
+            "specificity": 0.9337349397590361,
+            "f1": 0.71875,
+            "mcc": 0.6088927512177235,
+            "mean_graph_mcc": 0.5631083880707904,
+            "roc_auc": 0.8868259924945685,
+            "pr_auc": 0.8512548771736218,
+            "tn": 310,
+            "fp": 22,
+            "fn": 68,
+            "tp": 115,
+            "positive_predictions": 137,
+            "node_count": 515,
+            "graph_count": 12
+          },
+          "diagnostic_best_pooled_mcc": {
+            "threshold": 0.3,
+            "accuracy": 0.8388349514563107,
+            "precision": 0.7808988764044944,
+            "recall": 0.7595628415300546,
+            "specificity": 0.8825301204819277,
+            "f1": 0.7700831024930748,
+            "mcc": 0.6462008794887568,
+            "mean_graph_mcc": 0.598702441524789,
+            "roc_auc": 0.8868259924945685,
+            "pr_auc": 0.8512548771736218,
+            "tn": 293,
+            "fp": 39,
+            "fn": 44,
+            "tp": 139,
+            "positive_predictions": 178,
+            "node_count": 515,
+            "graph_count": 12
+          }
+        }
+      }
+    },
+    "validation_loss": {
+      "epoch": 80,
+      "checkpoint": "/home2/2025/25cxq/my_mvrbind/双分支多seed/trail20-HARIBOSS+Train60-多seed/seed24/Set1/lowest_validation_loss.pt",
+      "splits": {
+        "jl10": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.7417783191230207,
+            "precision": 0.6111111111111112,
+            "recall": 0.5416666666666666,
+            "specificity": 0.8366247755834829,
+            "f1": 0.5742971887550202,
+            "mcc": 0.39140745967320034,
+            "mean_graph_mcc": 0.42819276549511154,
+            "roc_auc": 0.7942916598661662,
+            "pr_auc": 0.6700117595324766,
+            "tn": 466,
+            "fp": 91,
+            "fn": 121,
+            "tp": 143,
+            "positive_predictions": 234,
+            "node_count": 821,
+            "graph_count": 10
+          },
+          "diagnostic_best_pooled_mcc": {
+            "threshold": 0.63,
+            "accuracy": 0.7600487210718636,
+            "precision": 0.6871508379888268,
+            "recall": 0.4659090909090909,
+            "specificity": 0.8994614003590664,
+            "f1": 0.5553047404063205,
+            "mcc": 0.4133034215583613,
+            "mean_graph_mcc": 0.4305368724043914,
+            "roc_auc": 0.7942916598661662,
+            "pr_auc": 0.6700117595324766,
+            "tn": 501,
+            "fp": 56,
+            "fn": 141,
+            "tp": 123,
+            "positive_predictions": 179,
+            "node_count": 821,
+            "graph_count": 10
+          }
+        },
+        "tl12": {
+          "fixed_0_5": {
+            "threshold": 0.5,
+            "accuracy": 0.8271844660194175,
+            "precision": 0.8309859154929577,
+            "recall": 0.644808743169399,
+            "specificity": 0.927710843373494,
+            "f1": 0.7261538461538461,
+            "mcc": 0.6131776936638124,
+            "mean_graph_mcc": 0.5699761538609635,
+            "roc_auc": 0.8803410362762525,
+            "pr_auc": 0.8429904249498177,
+            "tn": 308,
+            "fp": 24,
+            "fn": 65,
+            "tp": 118,
+            "positive_predictions": 142,
+            "node_count": 515,
+            "graph_count": 12
+          },
+          "diagnostic_best_pooled_mcc": {
+            "threshold": 0.43,
+            "accuracy": 0.8368932038834952,
+            "precision": 0.8113207547169812,
+            "recall": 0.7049180327868853,
+            "specificity": 0.9096385542168675,
+            "f1": 0.7543859649122806,
+            "mcc": 0.6366971465343282,
+            "mean_graph_mcc": 0.5916447060260409,
+            "roc_auc": 0.8803410362762525,
+            "pr_auc": 0.8429904249498177,
+            "tn": 302,
+            "fp": 30,
+            "fn": 54,
+            "tp": 129,
+            "positive_predictions": 159,
+            "node_count": 515,
+            "graph_count": 12
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "pdb_id": "2JUK",
+  "chain": "A",
+  "record_id": "2JUK_A",
+  "source_record_id": "test18_0005",
+  "sequence": "GGCCUUCCCACAAGGGAAGGCC",
+  "nucleotides": 22,
+  "surface_points": 1057,
+  "source_package": "data/processed/test18.pt",
+  "source_package_sha256": "df03b29dcdedcace516c5f69441e983ed42e8abec9964c0b5937fc1b4bf3e265",
+  "source_structure": "data/raw/structures/train60_test18/2jukA.pdb",
+  "source_structure_sha256": "380837328d36855ce30cf5274b1b63ff63be5b117321652ef8e0b375ba80be61",
+  "checkpoint": "checkpoints/train60/seed1/best_model.pt",
+  "checkpoint_sha256": "456e5b5b57c11232c5f7b360af4fab708af86fff00b47ac137307ce160bc80d9",
+  "labels_in_demo": false,
+  "feature_tensors_copied_without_recomputation": true,
+  "prediction_threshold": 0.5,
+  "threshold_operator": ">",
+  "probability_absolute_tolerance": 0.0001,
+  "files": {
+    "sequence.fasta": "59330d40c95a34bc9d399c70851d756e759e64335e0eff5f9c170bfeca81f114",
+    "2JUK_A.pt": "99baa0c98ae9d8f4c8b27534bda8119f9b39614f63bd601c1227d737881bf0aa",
+    "2JUK_A.pdb": "91457c70a55a2fdad77ec03443bf69d5d36c71773ea510cbe1780865f0d2a106",
+    "expected_predictions.csv": "9ece8b58c9d1a66873d7e628650fd99b9fbb4a2cf47725aa2fc8c02e52385609"
+  },
+  "reference_environment": {
+    "python": "3.8.20",
+    "torch": "2.2.0+cu121",
+    "numpy": "1.24.4",
+    "device": "cpu"
+  }
+}

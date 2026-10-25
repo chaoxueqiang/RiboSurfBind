@@ -1,0 +1,279 @@
+[
+  {
+    "source": "最佳模型配置trail20/lowest_validation_loss.pt",
+    "target": "checkpoints/train60/seed1/best_model.pt",
+    "sha256": "456e5b5b57c11232c5f7b360af4fab708af86fff00b47ac137307ce160bc80d9"
+  },
+  {
+    "source": "HARIBOSS_RNABind_multichain结果/Trial20/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set1/seed1/best_model.pt",
+    "sha256": "f667c37c753b59f605631b23fe019a3a8cdd258bf17160bae86221cf8dbd67c3"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed5/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set1/seed5/best_model.pt",
+    "sha256": "696d610552efe788a6dc7d1898145f32d43f7b4459c341661a4e4d9e499a62f3"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed12/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set1/seed12/best_model.pt",
+    "sha256": "98b819a6572e45f412ced59b00adf7526ee14e72c28dd807f8b9eea42d454f5c"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed20/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set1/seed20/best_model.pt",
+    "sha256": "b6d333f5f323e622daa217cc08f34174adf1d0bff0b5b89be59141365bbd77e8"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed23/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set1/seed23/best_model.pt",
+    "sha256": "0ac0fe688b7d08ba0bf84b78e051c0c34ce28b6049b5cd50373f74ecd3f76dbf"
+  },
+  {
+    "source": "HARIBOSS_RNABind_multichain结果/Trial20/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set2/seed1/best_model.pt",
+    "sha256": "6585de0adf12adc38b4de75181713c93ef3ecdd5c911199b37d57a80f2a75d51"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed5/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set2/seed5/best_model.pt",
+    "sha256": "4a8731b4f1a6745c2b1fd80b9d22c637dd244c219bf2e65c5a827aecf05a99b1"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed12/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set2/seed12/best_model.pt",
+    "sha256": "09de8968517eec55aa7de0ed00d758dcd784bc781681332cf8e75ebdf1f6df89"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed20/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set2/seed20/best_model.pt",
+    "sha256": "bd157aa9390a3eabe6f349b06b8f12a74c84cd290a121e46ee5b96493ed67037"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed23/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set2/seed23/best_model.pt",
+    "sha256": "8f354f418b5a78599bdbe37aa112a3684df737a827ed7cd6ca23f5c6a5b48add"
+  },
+  {
+    "source": "HARIBOSS_RNABind_multichain结果/Trial20/Set3/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set3/seed1/best_model.pt",
+    "sha256": "14d666c96bbad9b1da23752f6f65181498bfeced7ce5c03ced180c97e2bc04c3"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed5/Set3/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set3/seed5/best_model.pt",
+    "sha256": "8e2083b7e8d7094e05ad856904a720b753bafc287be69807f0914ea5f9738fa1"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed12/Set3/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set3/seed12/best_model.pt",
+    "sha256": "00fed1c24bd0b395ba2fa00033c21699bee5381e2b95abba8a857639a279fb12"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed20/Set3/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set3/seed20/best_model.pt",
+    "sha256": "b55c1956a67e05a72d55831800dfd494a726ff4fbc6932b660b201f44978dd5c"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed23/Set3/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set3/seed23/best_model.pt",
+    "sha256": "f5012507fd02c37b690a18c936b6bd81dd3193d62343fcc73563dfa712f7091a"
+  },
+  {
+    "source": "HARIBOSS_RNABind_multichain结果/Trial20/Set4/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set4/seed1/best_model.pt",
+    "sha256": "05c12976e2670268581582a88ba06c93cd70a33bda51eaf76e4e2f1abe8e3f66"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed5/Set4/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set4/seed5/best_model.pt",
+    "sha256": "9870d6e94e954eecd09f79e731438f79062ff498e3f270d8c1a613ced1bc0e19"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed12/Set4/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set4/seed12/best_model.pt",
+    "sha256": "f83db08ef7b9f40c1947853bb78c0a0bb943d73f763167b4cc667e6f144851dc"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed20/Set4/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set4/seed20/best_model.pt",
+    "sha256": "59149bbd5b71cbfbe175a272f3283608aa7f571ef328280bc1310d79ecc4466b"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS-多seed/seed23/Set4/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss/set4/seed23/best_model.pt",
+    "sha256": "c310f2b82f98b3a1b03a8d1b3b7c3c98d26be248a1a72deb58e09597f7250307"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS+Train60-多seed/seed15/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss_tr60/seed15/best_model.pt",
+    "sha256": "b34f1d09a06a70ba416b12137864603e0ed78e3922b63ad1005b9bbc3f236733"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS+Train60-多seed/seed20/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss_tr60/seed20/best_model.pt",
+    "sha256": "6cf976695c7059061b0fccdfb23e72cb70931383ee3cc19033c01f7a8ae999ee"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS+Train60-多seed/seed24/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss_tr60/seed24/best_model.pt",
+    "sha256": "88945d037665695666b4d8f3ea950c058396cf91dc8905f08ced162d7053b7c7"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS+Train60-多seed/seed28/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss_tr60/seed28/best_model.pt",
+    "sha256": "8e7ea325ab52b47353fec476ee6f82e34a82f59e82317b3cfcec2652a6ed8fec"
+  },
+  {
+    "source": "双分支多seed/trail20-HARIBOSS+Train60-多seed/seed46/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss_tr60/seed46/best_model.pt",
+    "sha256": "2062a3ba56f96b8b1fb9edaf216a74bc505184ad22360aa7f3bee6412aca12f9"
+  },
+  {
+    "source": "双分支消融/Trial20_test18-test9/01_ATT_only/lowest_validation_loss.pt",
+    "target": "checkpoints/ablations/att_only/best_model.pt",
+    "sha256": "fef90cd5518780b1353d920524fb87819be6ffdbebcee4bd8e19d8bdc2b851ca"
+  },
+  {
+    "source": "双分支消融/Trial20_test18-test9/02_Surface_only/lowest_validation_loss.pt",
+    "target": "checkpoints/ablations/surface_only/best_model.pt",
+    "sha256": "e760f59fa85db644435f401f6e056305607ac9f6d4de2d06980a3eb99eeb973d"
+  },
+  {
+    "source": "双分支消融/Trial20_test18-test9/04_semantic_only/lowest_validation_loss.pt",
+    "target": "checkpoints/ablations/semantic_only/best_model.pt",
+    "sha256": "72d784c9f1fa9f3ce472019eb29cbe971e0a64d655111a47273e2c828c107ec4"
+  },
+  {
+    "source": "双分支消融/Trial20_test18-test9/05_spatial_only/lowest_validation_loss.pt",
+    "target": "checkpoints/ablations/spatial_only/best_model.pt",
+    "sha256": "25526bfbb193bc2037f3649dfb1954b11d9b79b5dec646decab9df87b700ddc9"
+  },
+  {
+    "source": "双分支消融/Trial20_编号1_2_4_5_7_8/09_no_relation_gate/lowest_validation_loss.pt",
+    "target": "checkpoints/ablations/no_relation_gate/best_model.pt",
+    "sha256": "385cfe481e310f4d06508a5cb2dbf88dc00fc1880453635b98850b25a5155fe8"
+  },
+  {
+    "source": "敏感性分析/att层数/depth_1/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/attention_depth/1/best_model.pt",
+    "sha256": "8c0295d3e6e31b293d23591646d0eb14a35e48eb4ea89d981c1e97119f92f867"
+  },
+  {
+    "source": "敏感性分析/att层数/depth_2/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/attention_depth/2/best_model.pt",
+    "sha256": "d022a3e8a5a1c5adedfd117d4e3639b7897eedc007c8e176bcad7bccf0971b2a"
+  },
+  {
+    "source": "敏感性分析/att层数/depth_3/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/attention_depth/3/best_model.pt",
+    "sha256": "6d12e7c3d53c0fd4a3c43643c32a9726db52431d4d6df8ed8b8b6dfa9f7d6a6a"
+  },
+  {
+    "source": "敏感性分析/att层数/depth_4/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/attention_depth/4/best_model.pt",
+    "sha256": "e91dca00bfdc4def1314af1db9fa20ec31cf7eb6bc835b562f64f751f548a6d9"
+  },
+  {
+    "source": "敏感性分析/att层数/depth_5/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/attention_depth/5/best_model.pt",
+    "sha256": "5c2e6f6b74bb884f8e07f7c1eaf3ad0268b283005e41e179f28d09df70cf517e"
+  },
+  {
+    "source": "敏感性分析/att层数/depth_6/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/attention_depth/6/best_model.pt",
+    "sha256": "a4111527e932fe15c0f4f9d9814fd6fa43e3d955b6f9f064fae83975a84796c4"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_4/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/4/best_model.pt",
+    "sha256": "f52accf37fec5feed9a590b1ddc0e621dc0afa9315b784c5ded6e9f318527407"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_6/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/6/best_model.pt",
+    "sha256": "29542cd963eafe700217cf7451b8152741a074ba4efa4ae943aed79b7f996db1"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_8/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/8/best_model.pt",
+    "sha256": "aa2400f4c2ed22097f3e2f89bc98f14c29853ccf7df4ff589ef5970d80e96b1e"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_10/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/10/best_model.pt",
+    "sha256": "e91dca00bfdc4def1314af1db9fa20ec31cf7eb6bc835b562f64f751f548a6d9",
+    "shared_with": "checkpoints/sensitivity/attention_depth/4/best_model.pt"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_12/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/12/best_model.pt",
+    "sha256": "66e0a9b8e9b1cdfeb42199205a55052b8ddfc33127e21a40fb935d92d0a06e6c"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_16/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/16/best_model.pt",
+    "sha256": "c3e1cf51e610826d9d71710ff53a172e9245d829498edad473de1ee86bf1e07b"
+  },
+  {
+    "source": "敏感性分析/语义top-k/k_20/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/semantic_topk/20/best_model.pt",
+    "sha256": "6b3895fba5264a13c6b3bb713d9cccffd73116e3536863af76ff6dfc1f2edbad"
+  },
+  {
+    "source": "敏感性分析/空间kNN/k_4/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/spatial_knn/4/best_model.pt",
+    "sha256": "58b4ae086a26f77752038e823d35f9fff08bfddc85030ab7409c9346c43ef254"
+  },
+  {
+    "source": "敏感性分析/空间kNN/k_6/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/spatial_knn/6/best_model.pt",
+    "sha256": "a8754097ccb52b8b917c28d9670e11cb2fc276483686f36c3faad16a959c8c46"
+  },
+  {
+    "source": "敏感性分析/空间kNN/k_8/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/spatial_knn/8/best_model.pt",
+    "sha256": "e91dca00bfdc4def1314af1db9fa20ec31cf7eb6bc835b562f64f751f548a6d9",
+    "shared_with": "checkpoints/sensitivity/attention_depth/4/best_model.pt"
+  },
+  {
+    "source": "敏感性分析/空间kNN/k_10/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/spatial_knn/10/best_model.pt",
+    "sha256": "886f184cfeb6aac345398516918f3a0f3a0dadc8198d9d74ff6343e1a327e6ce"
+  },
+  {
+    "source": "敏感性分析/空间kNN/k_12/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/spatial_knn/12/best_model.pt",
+    "sha256": "2a5c0e43b14351fc57672968978bbfac93cdb354c878d5938cc53c24fc075f52"
+  },
+  {
+    "source": "敏感性分析/空间kNN/k_16/lowest_validation_loss.pt",
+    "target": "checkpoints/sensitivity/spatial_knn/16/best_model.pt",
+    "sha256": "50a4f1e08acfc2ec91ae9fca81e9ab9ec8feb2762384c6f8850c40242a653789"
+  },
+  {
+    "source": "HARIBOSS+TR60 Test/Trial20/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/hariboss_tr60/seed1/best_model.pt",
+    "sha256": "b171cc10d0bfd0125f748e0cee47f467a1432add96969db2fa863f1bc4a2cf89"
+  },
+  {
+    "source": "双分支消融/trail20-set2消融/01_ATT_only/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/case_models/hariboss/att_only/best_model.pt",
+    "sha256": "9ab91c0e84911780aa67bbf8c6de27dd3f7ca502dd7a9db9ed73f19b6938ac29"
+  },
+  {
+    "source": "双分支消融/trail20-set2消融/02_Surface_only/Set2/lowest_validation_loss.pt",
+    "target": "checkpoints/case_models/hariboss/surface_only/best_model.pt",
+    "sha256": "d64c95b4e833bb1bd52cacea7d7e87369576ffe6f50cd074ecc5252d0ed5a43a"
+  },
+  {
+    "source": "双分支消融/trail20-jl+tl消融/01_ATT_only/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/case_models/external/att_only/best_model.pt",
+    "sha256": "09344205e34ba5c697a70e5e50c3fb33fbef87a6bd894ee3b2a2c06d8743b368"
+  },
+  {
+    "source": "双分支消融/trail20-jl+tl消融/02_Surface_only/Set1/lowest_validation_loss.pt",
+    "target": "checkpoints/case_models/external/surface_only/best_model.pt",
+    "sha256": "bcfb6c9ae6c2b404b86258cf7306a5e6a1f546477ea2644ac382ff744ee562b6"
+  }
+]

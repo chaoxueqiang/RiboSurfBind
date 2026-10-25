@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "fold": 2,
+  "counts": {
+    "train": 284,
+    "validation": 31,
+    "test": 38
+  },
+  "nodes": {
+    "train": 27306,
+    "validation": 2624,
+    "test": 5184
+  },
+  "positives": {
+    "train": 4174,
+    "validation": 350,
+    "test": 434
+  },
+  "overlap": 0,
+  "labels_modified": false
+}

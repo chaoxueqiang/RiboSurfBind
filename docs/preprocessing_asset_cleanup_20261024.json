@@ -1,0 +1,144 @@
+{
+  "status": "PASS",
+  "structure_files_checked": 1268,
+  "model_index_checked": 0,
+  "successfully_parsed_structures": 1268,
+  "rna_chains_compared": 1583,
+  "residue_occurrences_compared": 86356,
+  "exact_alignments_compared": 1583,
+  "paired_identical_errors": [],
+  "representative_preparation_checks": [
+    {
+      "group": "hariboss",
+      "records_equal": true,
+      "identity_labels_equal": true,
+      "exclusions_equal": true,
+      "receptor_pdb_bytes_equal": true,
+      "surface_manifest_modes_equal": [
+        "identity",
+        "indices",
+        "alignment"
+      ]
+    },
+    {
+      "group": "hariboss_tr60",
+      "records_equal": true,
+      "identity_labels_equal": true,
+      "exclusions_equal": true,
+      "receptor_pdb_bytes_equal": true,
+      "surface_manifest_modes_equal": [
+        "identity",
+        "indices",
+        "alignment"
+      ]
+    },
+    {
+      "group": "jl10",
+      "records_equal": true,
+      "identity_labels_equal": true,
+      "exclusions_equal": true,
+      "receptor_pdb_bytes_equal": true,
+      "surface_manifest_modes_equal": [
+        "identity",
+        "indices",
+        "alignment"
+      ]
+    },
+    {
+      "group": "tl12",
+      "records_equal": true,
+      "identity_labels_equal": true,
+      "exclusions_equal": true,
+      "receptor_pdb_bytes_equal": true,
+      "surface_manifest_modes_equal": [
+        "identity",
+        "indices",
+        "alignment"
+      ]
+    },
+    {
+      "group": "train60_test18",
+      "records_equal": true,
+      "identity_labels_equal": true,
+      "exclusions_equal": true,
+      "receptor_pdb_bytes_equal": true,
+      "surface_manifest_modes_equal": [
+        "identity",
+        "indices",
+        "alignment"
+      ]
+    }
+  ],
+  "active_surface_functions_source_identical": [
+    "sha256",
+    "read_rows",
+    "pdb_atom_field",
+    "write_rna_receptor",
+    "run_checked",
+    "protonate",
+    "extract_xyzrn",
+    "read_msms",
+    "read_msms_all_components",
+    "compute_normals",
+    "board_feature",
+    "tangent_frames",
+    "atom_region",
+    "atom_name_index",
+    "point_chemistry",
+    "process_sample",
+    "main"
+  ],
+  "external_surface_tools_rerun": false,
+  "frozen_benchmark_inputs_regenerated": false,
+  "full_training_repeated": false,
+  "elapsed_seconds": 89.10547711327672,
+  "automated_tests_passed": 23,
+  "asset_entries_verified": 1532,
+  "relative_internal_asset_links": 8,
+  "logical_checkpoint_configurations": 55,
+  "physical_ribosurfbind_weights": 53,
+  "all_checkpoint_contents_unchanged": true,
+  "protected_file_sha256": {
+    "models/semantic_spatial.py": "2f46c082ff60791eca476f106f95e51dfe5c93bf2db788040853046743e309f0",
+    "models/ribosurfbind.py": "9512eb257611796a9862955eb4180c320682bde88605c403d32b4c5397f2e85a",
+    "models/fusion.py": "09cdcdd3c5a34c254394bc1c4cb802241d619aa327effe9203d35c9f0a23bb10",
+    "models/surface.py": "c3d3ea8036a9b58b4ffca77a452e499453ac394fe5f85d3ee60eb78c0c02ca39",
+    "models/__init__.py": "b94aaddc7e46ec4f3735d6dcb63f17aa8b24113a2416e549360f8f362f86ff3c",
+    "utils/metrics.py": "e997c8b17f2b3cd4143e79247e61f4be1a6e2d7418b81bf89a1c3a325223d12e",
+    "utils/reproducibility.py": "61991893e58ab4feded498ac150cdb5bc807127c1c9b1346fc91678bd418221e",
+    "utils/checkpoints.py": "62fcae11473bdd2892437f35f3bc7c4c569e7b077435a4f03ef6a57f972f2147",
+    "utils/engine.py": "353ee149d12a0b9c38dbff65ce5096d10bd6c984a3de48c9c1f2130e811c400c",
+    "utils/__init__.py": "214fe089d17aa897970597a828f5193e6764453e8a84b63399a3d665cf599705",
+    "utils/io.py": "f7ad73c44271be6a2f5c93baf574a9b15a93aa15e28853e2065861090891c7ad",
+    "configs/cases.json": "476d4fa1a4078f9f00d3c71bf3ae54692523d84f945a0745a8f2ac48e5a1e225",
+    "configs/protocols.json": "901bc3cbd4839e7574c22925fb58553c453a872a9bebdf19793ccaa4817ec682",
+    "configs/ablations.json": "1ef2a649fb3f01a5944daa06583bb75ad356ead2e6bdf0d178306801e1de3240",
+    "configs/sensitivity.json": "7ea6b8812359c2e540a5308fd781a25206f07c1830d0434ae4c044ebb31c61f4",
+    "configs/trial20.json": "b91d3418df44a1c608dedcfa85898be9abe916a2a5ca3c80572c41dd2ba10600",
+    "environments/surface.yml": "ab837d9d9e2f3517578ec17d5de4ccf91346e521ecca5c3775c0ac9c91799ecb",
+    "environments/ernie-rna.yml": "9d049add66f18083d5e3a62257542d6639109aa707a421a7bde5fe12deb25dc5",
+    "train.py": "e73c1d722468b30e8278068b38afcc8a303c77d237c4722a84e3fc11a819f40b",
+    "evaluate.py": "7c5dcdac8bab54bf5cdd0148939afaa5e8209248177db0de5c256dc1ab775fd4",
+    "predict.py": "3f55a42449a5ecb1657d0754dca64334e3164612f9dddbb3c8c425bc044d57bb",
+    "environment.yml": "60a92686ffb0437c37947dbb42f6096b14082198d0b781090f5f9cc19d164551",
+    "data_process/prepare_records.py": "e2bb7a63ec730a5daa9a3b54763e76f23148a8feda98a250d0a0c3cbe265e0d7",
+    "data_process/prepare_surface_fallback.py": "b52b9d6888efd9577025943405c2d8abc0120ff6b2c844dd8e30a31a475fee2e",
+    "data_process/pymesh_fix_official.py": "3bdbf7452a51e2a475bc41a32e537ca0b49487cf4e8a448dee3c23b4a4c1ffa5",
+    "data_process/pack_dataset.py": "65f19adf9ca1ecd5f58d995ca3f72ecaa6bedcc7eaf2bcca488855e0ab98628e",
+    "data_process/packed.py": "efbb620b528eb0f4a982efde0181a291f9de17967cb7043b40d2e73287cd487c",
+    "data_process/extract_ernie.py": "44620eda7faf3e9fcfa09faeff5b744d860b7aa2cb294c2f1c3efd5b8d6e66fb",
+    "data_process/validate_cache.py": "9309bb152eea11528664eb8683f7ce6b36b4c3965736e4a8cb9539a98f6e5918",
+    "results/published_metrics.csv": "1c4abdfebb764f7a1346f96732ea7d75447bef9c1f3c6c4797b6ab96077b12c0"
+  },
+  "frozen_figure_source_files_unchanged": 38,
+  "plots_regenerated_successfully": true,
+  "removed_disposable_figure_files": 14,
+  "removed": [
+    "unused typing/math imports",
+    "duplicate sequence-key implementation",
+    "discarded nucleotide interaction frames and legacy centroids",
+    "duplicate physical weight/log copies",
+    "disposable reproduced figure exports"
+  ],
+  "runtime_behavior_note": "No model, optimizer, loss, RNG, initialization or frozen input arithmetic was edited; no complete retraining or external MSMS/PyMesh reconstruction was performed."
+}

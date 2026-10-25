@@ -1,0 +1,6 @@
+[
+  {"name":"1NEM_A","protocol":"test18","seed":1},
+  {"name":"1Q8N_A","protocol":"test18","seed":1},
+  {"name":"1AKX","protocol":"hariboss","set":2,"seed":1},
+  {"name":"7L0Z_G","protocol":"external","seed":1,"split":"tl12"}
+]

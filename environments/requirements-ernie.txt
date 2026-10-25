@@ -1,0 +1,13 @@
+# Python 3.9.23. Preinstall torch/numpy and build tools before fairseq;
+# use pip 23.3.1 and --no-build-isolation, as documented in ENVIRONMENTS.md.
+torch==1.10.0
+torchaudio==0.10.0
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.6.1
+setuptools==68.2.2
+wheel==0.41.3
+Cython==0.29.36
+fairseq @ https://github.com/facebookresearch/fairseq/archive/refs/tags/v0.12.2.tar.gz#sha256=b5bb076f8b0d5b06a897b11627da278816752b2202650c34becd8f4240f86961
+omegaconf==2.0.6
+hydra-core==1.0.7

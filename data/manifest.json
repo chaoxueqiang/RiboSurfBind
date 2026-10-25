@@ -1,0 +1,70 @@
+{
+  "schema": "ribosurfbind_rna_package_v1",
+  "feature_extraction_performed": false,
+  "packages": {
+    "train60": {
+      "file": "processed/train60.pt",
+      "sha256": "4a8eac6378774ab90527a1cf4130bf8c6ee2e6b08d47aa471e2d0c67344c23bc",
+      "bytes": 31572688,
+      "records": 60,
+      "nucleotides": 3054,
+      "surface_points": 141611,
+      "positives": 950,
+      "negatives": 2104
+    },
+    "test18": {
+      "file": "processed/test18.pt",
+      "sha256": "df03b29dcdedcace516c5f69441e983ed42e8abec9964c0b5937fc1b4bf3e265",
+      "bytes": 6164730,
+      "records": 18,
+      "nucleotides": 610,
+      "surface_points": 29035,
+      "positives": 207,
+      "negatives": 403
+    },
+    "hariboss": {
+      "file": "processed/hariboss.pt",
+      "sha256": "1abb825cd1f1cdab92656b21494091865abf634850923759f3e7671f0b65bc05",
+      "bytes": 337777341,
+      "records": 353,
+      "nucleotides": 35114,
+      "surface_points": 1546153,
+      "positives": 4958,
+      "negatives": 30156
+    },
+    "hariboss_tr60": {
+      "file": "processed/hariboss_tr60.pt",
+      "sha256": "8a2b01a7fabfac33a4b260c755d3737be396d79b9eb1fec8dc53266a2f23fc3f",
+      "bytes": 206827902,
+      "records": 432,
+      "nucleotides": 22432,
+      "surface_points": 1029728,
+      "positives": 7085,
+      "negatives": 15347
+    },
+    "tl12": {
+      "file": "processed/tl12.pt",
+      "sha256": "cbb05398ad598df3a08ddbc85a7257b0f0178a032c432abb0c7d90126944514f",
+      "bytes": 5232858,
+      "records": 12,
+      "nucleotides": 515,
+      "surface_points": 23543,
+      "positives": 183,
+      "negatives": 332
+    },
+    "jl10": {
+      "file": "processed/jl10.pt",
+      "sha256": "cedfe34434c9f015bd96096947ad83057596f0794aa4e404631dd4e41093426f",
+      "bytes": 8377096,
+      "records": 10,
+      "nucleotides": 821,
+      "surface_points": 37189,
+      "positives": 264,
+      "negatives": 557
+    }
+  },
+  "source_directory_name": "data-原始的形式",
+  "raw_assets_copied": true,
+  "original_files": 4309,
+  "original_bytes": 743939618
+}

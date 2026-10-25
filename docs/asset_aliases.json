@@ -1,0 +1,42 @@
+[
+  {
+    "path": "checkpoints/sensitivity/semantic_topk/10/best_model.pt",
+    "target": "checkpoints/sensitivity/attention_depth/4/best_model.pt",
+    "sha256": "e91dca00bfdc4def1314af1db9fa20ec31cf7eb6bc835b562f64f751f548a6d9"
+  },
+  {
+    "path": "checkpoints/sensitivity/spatial_knn/8/best_model.pt",
+    "target": "checkpoints/sensitivity/attention_depth/4/best_model.pt",
+    "sha256": "e91dca00bfdc4def1314af1db9fa20ec31cf7eb6bc835b562f64f751f548a6d9"
+  },
+  {
+    "path": "results/raw/sensitivity/attention_depth/4/metrics.csv",
+    "target": "results/raw/train60/seed1/metrics.csv",
+    "sha256": "4dad56f2b4c82f4440191d494054287ba16618ae631df9db87a7df8c6b2bbec2"
+  },
+  {
+    "path": "results/raw/sensitivity/attention_depth/4/metrics.jsonl",
+    "target": "results/raw/train60/seed1/metrics.jsonl",
+    "sha256": "24a5fe3d66dd6ad96747ea6c6f546b1e68e8be1e3879f6e4c17bb7da5f8af887"
+  },
+  {
+    "path": "results/raw/sensitivity/semantic_topk/10/metrics.csv",
+    "target": "results/raw/train60/seed1/metrics.csv",
+    "sha256": "4dad56f2b4c82f4440191d494054287ba16618ae631df9db87a7df8c6b2bbec2"
+  },
+  {
+    "path": "results/raw/sensitivity/semantic_topk/10/metrics.jsonl",
+    "target": "results/raw/train60/seed1/metrics.jsonl",
+    "sha256": "24a5fe3d66dd6ad96747ea6c6f546b1e68e8be1e3879f6e4c17bb7da5f8af887"
+  },
+  {
+    "path": "results/raw/sensitivity/spatial_knn/8/metrics.csv",
+    "target": "results/raw/train60/seed1/metrics.csv",
+    "sha256": "4dad56f2b4c82f4440191d494054287ba16618ae631df9db87a7df8c6b2bbec2"
+  },
+  {
+    "path": "results/raw/sensitivity/spatial_knn/8/metrics.jsonl",
+    "target": "results/raw/train60/seed1/metrics.jsonl",
+    "sha256": "24a5fe3d66dd6ad96747ea6c6f546b1e68e8be1e3879f6e4c17bb7da5f8af887"
+  }
+]

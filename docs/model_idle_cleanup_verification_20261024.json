@@ -1,0 +1,79 @@
+{
+  "checkpoint_architectures": 55,
+  "initialization_equal": true,
+  "initialization_rng_equal": true,
+  "parameter_order_equal": true,
+  "strict_loading_passed": true,
+  "training_checks": [
+    {
+      "protocol": "test18",
+      "set_id": 1,
+      "record_id": "train60_0053",
+      "checks_bitwise_equal": {
+        "loss": true,
+        "probabilities": true,
+        "gradients": true,
+        "gradient_norm": true,
+        "parameters": true,
+        "optimizer": true,
+        "rng": true
+      }
+    },
+    {
+      "protocol": "hariboss",
+      "set_id": 2,
+      "record_id": "6QIV",
+      "checks_bitwise_equal": {
+        "loss": true,
+        "probabilities": true,
+        "gradients": true,
+        "gradient_norm": true,
+        "parameters": true,
+        "optimizer": true,
+        "rng": true
+      }
+    },
+    {
+      "protocol": "external",
+      "set_id": 1,
+      "record_id": "1N7A_A",
+      "checks_bitwise_equal": {
+        "loss": true,
+        "probabilities": true,
+        "gradients": true,
+        "gradient_norm": true,
+        "parameters": true,
+        "optimizer": true,
+        "rng": true
+      }
+    }
+  ],
+  "status": "PASS",
+  "device": "CPU",
+  "test18_metrics_equal": true,
+  "test18_all_prediction_arrays_bitwise_equal": true,
+  "test18_nucleotides": 610,
+  "full_training_repeated": false,
+  "backup_directory": "/home2/2025/25cxq/new_mvrbind/\u6587\u4ef6\u6574\u7406\u5907\u4efd_20261024/model_idle_cleanup_20261024_184514",
+  "before_sha256": {
+    "surface.py": "6d5b01cef98d6caa4fd11d3aaaaa59c13c3e03e34e92e34fdfd4a39fb6bdc4e1",
+    "ribosurfbind.py": "083af342089dd36943aaa5daf7c1c30e0b2831e9e21edcb4eec547f678fc5423"
+  },
+  "after_sha256": {
+    "surface.py": "c3d3ea8036a9b58b4ffca77a452e499453ac394fe5f85d3ee60eb78c0c02ca39",
+    "ribosurfbind.py": "9512eb257611796a9862955eb4180c320682bde88605c403d32b4c5397f2e85a"
+  },
+  "parameterized_modules_removed": [],
+  "compatibility_layers_retained": [
+    "lin4",
+    "lin1",
+    "lin2",
+    "bn1"
+  ],
+  "removed": [
+    "unused self.config copy",
+    "non-paper canonical reduction and point sorting paths",
+    "stale surface comments"
+  ],
+  "guard_retained": "seed_all rejects the retired canonical-reductions environment setting"
+}
